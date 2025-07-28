@@ -20,6 +20,7 @@
   "homepage": "https://github.com/Harsh9934-debug/Javascript-pratice#readme",
   "dependencies": {
     "express": "^5.1.0",
+    "node": "^20.19.4",
     "nodemon": "^3.1.10"
   }
 }
