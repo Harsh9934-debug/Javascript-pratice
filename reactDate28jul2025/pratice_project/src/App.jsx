@@ -7,7 +7,7 @@ function App() {
   )
 }
 
-function Header(props){
+function Header({title}){
   return <div>
     {title}
   </div>
