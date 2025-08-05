@@ -7,7 +7,12 @@ def s(x,y):
     return 0
  v[(x,y)]=1
  print((x,y))
- return any(s(nx, ny) for nx, ny in [(0,y), (x,0), (4,y), (x,3), (x+min(y,4-x), y-min(y,4-x)), (x-min(x,3-y), y+min(x,3-y))])
-
-
+ return (
+    s(0,y) or
+    s(x,0) or 
+    s(4,y) or
+    s(x,3) or 
+    s(x+min(y,4-x),y-min(y,4-x)) or
+    s(x-min(x,3-y),y+min(x,3-y))
+    )
 s(0,0)
