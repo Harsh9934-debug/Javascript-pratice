@@ -12,7 +12,6 @@ def water_jug(j1, j2, target):
             print("✅ Target reached!")
             return
 
-        # All possible actions
         q.extend([
             (j1, b), (a, j2), (0, b), (a, 0),
             (a - min(a, j2 - b), b + min(a, j2 - b)),
