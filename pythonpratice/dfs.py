@@ -14,5 +14,4 @@ def dfs(node):
         visited.add(node)
         for neighbour in graph[node]:
             dfs(neighbour)
-print("Following is the depth first search")
 dfs('5')
