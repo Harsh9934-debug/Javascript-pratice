@@ -7,7 +7,8 @@ def s(x,y):
     return 0
  v[(x,y)]=1;
  print((x,y))
- return (s(0,y) or
+ return (
+    s(0,y) or
     s(x,0)or 
     s(4,y)or
     s(x,3)or 
