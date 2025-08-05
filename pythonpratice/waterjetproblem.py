@@ -1,19 +1,16 @@
-from collections import defaultdict
-jug1, jug2, target = 4, 3, 2
-visited = defaultdict(bool)
-def solve(x, y):
-    if (x == target and y == 0) or (x == 0 and y == target):
-        print(f"({x}, {y})")
-        return True
-    if visited[(x, y)]:
-        return False
-    print(f"({x}, {y})")
-    visited[(x, y)] = True
-    return (solve(0, y) or  
-            solve(x, 0) or
-            solve(jug1, y) or
-            solve(x, jug2) or
-            solve(x + min(y, jug1 - x), y - min(y, jug1 - x)) or
-            solve(x - min(x, jug2 - y), y + min(x, jug2 - y)))
-print("Steps:")
-solve(0, 0)
+v={}
+def s(x,y):
+ if(x==2 and y==0)or(x==0 and y==2):
+    print((x,y))
+    return 1
+ if(x,y)in v:
+    return 0
+ v[(x,y)]=1
+ print((x,y))
+ return (s(0,y) or
+    s(x,0)or 
+    s(4,y)or
+    s(x,3)or 
+    s(x+min(y,4-x),y-min(y,4-x))
+    or s(x-min(x,3-y),y+min(x,3-y)))
+s(0,0)
