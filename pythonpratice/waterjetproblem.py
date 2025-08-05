@@ -9,7 +9,7 @@ def water_jug(j1, j2, target):
         visited.add((a, b))
         print(f"Jug1: {a}, Jug2: {b}")
         if a == target or b == target:
-            print("✅ Target reached!")
+            print(" Target reached  ")
             return
 
         q.extend([
