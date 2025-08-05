@@ -1,31 +1,23 @@
 from queue import PriorityQueue
 
-def bestfs(graph,start,goal):
-    visited = set()
-    pq = PriorityQueue()
-    pq.put((0,start))
-    while not pq.empty():
-        cost,node = pq.get()
-        visited.add(node)
-        print(node)
-
-        if node == goal:
-            return True
-        for neighbour in graph[node]:
-            if neighbour not in visited:
-                pq.put((graph[node][neighbour],neighbour))
+def bestfs(g, s, goal):
+    v, q = set(), PriorityQueue()
+    q.put((0, s))
+    while not q.empty():
+        _, n = q.get()
+        if n in v: continue
+        print(n)
+        if n == goal: return True
+        v.add(n)
+        for nei, c in g[n].items():
+            if nei not in v: q.put((int(c), nei))
     return False
 
 graph = {
-    'A':{'B':'3','C':'6'},
-    'B':{'D':'2','E':'1'},
-    'C':{'F':'5'},
-    'D':{},
-    'E':{'F':'4'},
-    'F':{}
+    'A': {'B': '3', 'C': '6'},
+    'B': {'D': '2', 'E': '1'},
+    'C': {'F': '5'},
+    'D': {}, 'E': {'F': '4'}, 'F': {}
 }
 
-start_node = 'A'
-goal_node = 'F'
-result = bestfs(graph,start_node,goal_node)
-print("Path exists",result)
+print("Path exists", bestfs(graph, 'A', 'F'))
