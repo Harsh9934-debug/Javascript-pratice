@@ -5,7 +5,7 @@ def s(x,y):
     return 1
  if(x,y)in v:
     return 0
- v[(x,y)]=1;
+ v[(x,y)]=1
  print((x,y))
  return (
     s(0,y) or
