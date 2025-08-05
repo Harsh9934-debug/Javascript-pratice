@@ -23,3 +23,8 @@ graph = {
     'E':{'F':'4'},
     'F':{}
 }
+
+start_node = 'A'
+goal_node = 'F'
+result = bestfs(graph,start_node,goal_node)
+print("Path exists",result)
