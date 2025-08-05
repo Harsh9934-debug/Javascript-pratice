@@ -7,14 +7,12 @@ def bestfs(graph,start,goal):
         cost,node = pq.get()
         visited.add(node)
         print(node)
-
         if node == goal:
             return True
         for neighbour in graph[node]:
             if neighbour not in visited:
                 pq.put((graph[node][neighbour],neighbour))
     return False
-
 graph = {
     'A':{'B':'3','C':'6'},
     'B':{'D':'2','E':'1'},
@@ -23,7 +21,6 @@ graph = {
     'E':{},
     'F':{}
 }
-
 start_node = 'A'
 goal_node = 'F'
 result = bestfs(graph,start_node,goal_node)
