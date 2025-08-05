@@ -10,7 +10,7 @@ def s(x,y):
  return (
     s(0,y) or
     s(x,0) or 
-    s(4,y)or
+    s(4,y) or
     s(x,3)or 
     s(x+min(y,4-x),y-min(y,4-x)) or
     s(x-min(x,3-y),y+min(x,3-y))
