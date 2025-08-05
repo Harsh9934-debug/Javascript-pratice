@@ -1,23 +1,18 @@
-from queue import PriorityQueue
+from queue import PriorityQueue as PQ
 
-def bestfs(g, s, goal):
-    v, q = set(), PriorityQueue()
+def bestfs(g, s, e):
+    v, q = set(), PQ()
     q.put((0, s))
     while not q.empty():
         _, n = q.get()
         if n in v: continue
         print(n)
-        if n == goal: return True
+        if n == e: return True
         v.add(n)
-        for nei, c in g[n].items():
-            if nei not in v: q.put((int(c), nei))
+        [q.put((int(c), x)) for x, c in g[n].items() if x not in v]
     return False
 
-graph = {
-    'A': {'B': '3', 'C': '6'},
-    'B': {'D': '2', 'E': '1'},
-    'C': {'F': '5'},
-    'D': {}, 'E': {'F': '4'}, 'F': {}
-}
+g = {'A': {'B': '3', 'C': '6'}, 'B': {'D': '2', 'E': '1'},
+     'C': {'F': '5'}, 'D': {}, 'E': {'F': '4'}, 'F': {}}
 
-print("Path exists", bestfs(graph, 'A', 'F'))
+print("Path exists", bestfs(g, 'A', 'F'))
