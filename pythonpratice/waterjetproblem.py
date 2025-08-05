@@ -13,5 +13,6 @@ def s(x,y):
     s(4,y)or
     s(x,3)or 
     s(x+min(y,4-x),y-min(y,4-x)) or
-    s(x-min(x,3-y),y+min(x,3-y)))
+    s(x-min(x,3-y),y+min(x,3-y))
+    )
 s(0,0)
