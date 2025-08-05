@@ -18,5 +18,4 @@ def water_jug(j1, j2, target):
             (a + min(b, j1 - a), b - min(b, j1 - a))
         ])
 
-# Example: jug1 = 4L, jug2 = 3L, target = 2L
 water_jug(4, 3, 2)
