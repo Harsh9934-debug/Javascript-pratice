@@ -1,46 +1,23 @@
-from queue import PriorityQueue
+from collections import deque
 
-# Define the graph as an adjacency list
-graph = {
-    'S': ['A', 'B'],
-    'A': ['C'],
-    'B': ['D', 'E'],
-    'C': [],
-    'D': [],
-    'E': ['G'],
-    'G': []
-}
+def water_jug(j1, j2, target):
+    q, visited = deque([(0, 0)]), set()
 
-# Define the heuristic (h(n)) for each node
-heuristic = {
-    'S': 5,
-    'A': 4,
-    'B': 3,
-    'C': 2,
-    'D': 6,
-    'E': 1,
-    'G': 0
-}
+    while q:
+        a, b = q.popleft()
+        if (a, b) in visited: continue
+        visited.add((a, b))
+        print(f"Jug1: {a}, Jug2: {b}")
+        if a == target or b == target:
+            print("✅ Target reached!")
+            return
 
-# Best First Search algorithm
-def best_first_search(start, goal):
-    visited = set()
-    pq = PriorityQueue()
-    pq.put((heuristic[start], start))
+        # All possible actions
+        q.extend([
+            (j1, b), (a, j2), (0, b), (a, 0),
+            (a - min(a, j2 - b), b + min(a, j2 - b)),
+            (a + min(b, j1 - a), b - min(b, j1 - a))
+        ])
 
-    while not pq.empty():
-        _, current = pq.get()
-        if current in visited:
-            continue
-        print(current, end=" ")
-        visited.add(current)
-
-        if current == goal:
-            break
-
-        for neighbor in graph[current]:
-            if neighbor not in visited:
-                pq.put((heuristic[neighbor], neighbor))
-
-# Run the search from S to G
-best_first_search('S', 'G')
+# Example: jug1 = 4L, jug2 = 3L, target = 2L
+water_jug(4, 3, 2)
