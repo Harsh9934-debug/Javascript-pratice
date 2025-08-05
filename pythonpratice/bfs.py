@@ -3,7 +3,7 @@ graph = {
     '3':['2','4'],
     '7':['8'],
     '2':[ ],
-    '4':['8'],
+    '4':[],
     '8':[],
 }
 visited = []
@@ -14,4 +14,3 @@ while queue:
         print(node)
         visited.append(node)
         queue +=graph[node]
-        
