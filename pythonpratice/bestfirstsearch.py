@@ -1,6 +1,4 @@
 from queue import PriorityQueue
-
-# Define the graph as an adjacency list
 graph = {
     'S': ['A', 'B'],
     'A': ['C'],
@@ -10,8 +8,6 @@ graph = {
     'E': ['G'],
     'G': []
 }
-
-# Define the heuristic (h(n)) for each node
 heuristic = {
     'S': 5,
     'A': 4,
@@ -22,7 +18,6 @@ heuristic = {
     'G': 0
 }
 
-# Best First Search algorithm
 def best_first_search(start, goal):
     visited = set()
     pq = PriorityQueue()
@@ -42,5 +37,4 @@ def best_first_search(start, goal):
             if neighbor not in visited:
                 pq.put((heuristic[neighbor], neighbor))
 
-# Run the search from S to G
 best_first_search('S', 'G')
