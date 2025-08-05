@@ -11,11 +11,7 @@ visited = set()
 def dfs(node):
     if node not in visited:
         print(node)
-        visited.add(node)
+        visited.add(10)
         for neighbour in graph[node]:
             dfs(neighbour)
 dfs('5')
-
-
-
-
