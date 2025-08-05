@@ -6,4 +6,12 @@ graph = {
     '4':[],
     '8':[],
 }
-a
+ 
+visited = []
+queue = ['5']
+while queue:
+    node = queue.pop(0)
+    if node not in visited:
+        print(node)
+        visited.append(node)
+        queue += graph[node]
