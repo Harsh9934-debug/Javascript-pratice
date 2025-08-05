@@ -1,4 +1,5 @@
 from queue import PriorityQueue
+
 def bestfs(graph,start,goal):
     visited = set()
     pq = PriorityQueue()
