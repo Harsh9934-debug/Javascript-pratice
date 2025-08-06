@@ -14,8 +14,8 @@ def bestfs(graph,start,goal):
                 pq.put((graph[node][neighbour],neighbour))
     return False
 graph = {
-    'A':{'B':'3','C':'6'},
-    'B':{'D':'2','E':'1'},
+    'A':{'B':'1','C':'2'},
+    'B':{'D':'3','E':'4'},
     'C':{'F':'5'},
     'D':{},
     'E':{},
