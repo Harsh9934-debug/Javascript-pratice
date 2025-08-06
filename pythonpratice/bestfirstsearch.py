@@ -21,7 +21,5 @@ graph = {
     'E':{},
     'F':{}
 }
-start_node = 'A'
-goal_node = 'F'
-result = bestfs(graph,start_node,goal_node)
+result = bestfs(graph,'A','F')
 print("Path exists",result)
