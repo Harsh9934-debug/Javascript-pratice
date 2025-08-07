@@ -31,3 +31,10 @@ class datatypes:
         print("The value enterd is an positive interger")
         print(type(c))
     print("************************************************************")
+
+    d = 1.2+5
+    print("The value entered in the D is ",d)
+    print(type(d))
+    print("********************************************************")
+
+    
