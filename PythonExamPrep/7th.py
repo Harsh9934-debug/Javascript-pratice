@@ -7,4 +7,6 @@ for k,v in courses.items():
 
 for k in courses.keys():
     print("The key value is ",k)
-    
+
+
+
