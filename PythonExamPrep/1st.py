@@ -37,4 +37,8 @@ class datatypes:
     print(type(d))
     print("********************************************************")
 
-    
+    e = False
+    print("The data entered in the E is ",e)
+    print("The data type of the E is ")
+    print(type(e))
+    print("**********************************************************")
