@@ -13,4 +13,10 @@ print(t)
 count = tp1.count('e')
 print("Count of e is ",count)
 
+print('r' in tp1)
 
+lst =  list(tp1)
+print(lst)
+
+tp1 = tp1[:3] + tp1[7:]
+print(tp1)
