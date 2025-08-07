@@ -13,3 +13,8 @@ class datatypes:
     print("Data_type of a is ")
     print(type(a))
     print("****************************************************")
+
+    b=0b01
+    print("The value of b is ",b)
+    print("The data type of the b is ")
+    print(type(b))
