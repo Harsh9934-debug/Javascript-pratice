@@ -1,9 +1,12 @@
 # Program to demonstrate the operation in tuple 
 
-tpl = ('F','1','a','b','b','e','r','g','a','s','t','e','d')
-tpl1 = tpl+('1',)
-print(tpl)
+tp1 = ('F','1','a','b','b','e','r','g','a','s','t','e','d')
+tp1 = tp1+('1',)
+print(tp1)
 
-s = ''.join(tpl1)
+s = ''.join(tp1)
 print(s)
+
+t = tp1 [3:5]
+print(t)
 
