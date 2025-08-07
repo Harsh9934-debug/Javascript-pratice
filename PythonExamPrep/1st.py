@@ -18,3 +18,16 @@ class datatypes:
     print("The value of b is ",b)
     print("The data type of the b is ")
     print(type(b))
+    print("****************************************************")
+
+    c=-1.2
+    if c<0:
+        print("The value enter of C is ",c)
+        print("The value entered is an negative value")
+        print("The data type of C is")
+        print(type(c))
+    else:
+        print("The data entered in c is ",c)
+        print("The value enterd is an positive interger")
+        print(type(c))
+    print("************************************************************")
