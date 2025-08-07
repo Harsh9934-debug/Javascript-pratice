@@ -42,3 +42,8 @@ class datatypes:
     print("The data type of the E is ")
     print(type(e))
     print("**********************************************************")
+
+    f = "Hello"
+    print("The data enterd in the F is ",f)
+    print("The data type of F is ")
+    print(type(f))
