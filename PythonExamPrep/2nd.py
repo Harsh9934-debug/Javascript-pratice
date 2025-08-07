@@ -10,7 +10,7 @@ def multiply(x,y):
     return x*y
 
 def divide(x,y):
-    return(x/y)
+    return x/y
 
 print("Select the operator")
 print("1. Add")
@@ -19,14 +19,14 @@ print("3. Multiply")
 print("4. Divide")
 
 while True:
-    choice = int(input("Enter your choice from the following"))
+    choice = input("Enter your choice from the following")
     if choice in ('1','2','3','4'):
         try:
             num1 = int(input("Enter the first number"))
             num2 = int(input("Enter the second number "))
         except ValueError:
             print("Invalid input ! Enter an valid number ")
-        continue
+            continue
     if choice == '1':
         print(num1 ,"+",num2 ," = ", add(num1,num2))
     elif choice == '2':
