@@ -10,3 +10,7 @@ print(s)
 t = tp1 [3:5]
 print(t)
 
+count = tp1.count('e')
+print("Count of e is ",count)
+
+
