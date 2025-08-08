@@ -20,4 +20,3 @@ a.remove(100)
 print("After removing (100) :",a)
 for i in a :
     print(i)
-    
