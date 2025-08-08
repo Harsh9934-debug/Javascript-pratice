@@ -15,3 +15,7 @@ def triangle(b,h):
 radius = int(input("Enter the radius of circle"))
 circle(radius)
 
+length = int(input("Enter the length of the rectangle"))
+breadth = int(input("Enter the breadth of the rectangle"))
+rectangle(length,breadth)
+
