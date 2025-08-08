@@ -2,12 +2,12 @@
 
 courses = {'Python':'BCA', 'ACA':'BCOM','IBE':'BBA'}
 
-for k,v in courses.items():
-    print("The key is ",k,"and the value is ",v)
+for keys,value in courses.items():
+    print("The key is ",keys,"and the value is ",value)
 
-for k in courses.keys():
-    print("The key value is ",k)
+for keys in courses.keys():
+    print("The key value is ",keys)
 
 
-for k in courses.values():
-    print("The value is ",v)
+for keys in courses.values():
+    print("The value is ",value)
