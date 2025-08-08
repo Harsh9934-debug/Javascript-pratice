@@ -9,4 +9,5 @@ for k in courses.keys():
     print("The key value is ",k)
 
 
-
+for k in courses.values():
+    print("The value is ",v)
