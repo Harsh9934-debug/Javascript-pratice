@@ -11,3 +11,7 @@ def rectangle(l,b):
 def triangle(b,h):
     area = 0.5*b*h
     print("The area of the triangle is ",area)
+
+radius = int(input("Enter the radius of circle"))
+circle(radius)
+
