@@ -19,3 +19,6 @@ length = int(input("Enter the length of the rectangle"))
 breadth = int(input("Enter the breadth of the rectangle"))
 rectangle(length,breadth)
 
+base = int(input("Enter the base of the triangle"))
+height = int(input("Enter the height of the triangle "))
+triangle(base,height)
