@@ -2,7 +2,7 @@
 
 def circle(r):
     area = 3.14*r*r
-    print("The area of the cirsle is ",area)
+    print("The area of the circle is ",area)
 
 def rectangle(l,b):
     area = l*b
