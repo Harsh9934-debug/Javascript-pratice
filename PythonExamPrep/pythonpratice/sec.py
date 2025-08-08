@@ -15,9 +15,9 @@ print("Select form the following")
 print("1.Add   2.Multiply    3.Subtract     4.Divide" )
 while True:
     try:
-        choice = int(input("Enter your choice form the folliwing"))
-        num1 = int(input("Enter the first number"))
-        num2  = int(input("Enter the second number"))
+        choice = input("Enter your choice from the following")
+        num1 = float(input("Enter the first number"))
+        num2  = float(input("Enter the second number"))
     except ValueError:
         print("Invalid input")
         continue
@@ -34,7 +34,9 @@ while True:
     valu = input("Do you want to continue: ")
     if valu == 'no':
         break
+    elif valu =='yes':
+        continue
     else:
-        print("Invalid input !")
-
+        print("Invalid input")
+    
 
