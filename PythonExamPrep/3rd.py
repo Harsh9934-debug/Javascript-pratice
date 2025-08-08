@@ -14,5 +14,4 @@ print(countletters)
 subst = college.find("side")
 print(subst)
 print(college.isalnum())
-inst = "Presidency University"
-print(inst.replace("University","college"))
+print(college.replace("presidency","college"))
