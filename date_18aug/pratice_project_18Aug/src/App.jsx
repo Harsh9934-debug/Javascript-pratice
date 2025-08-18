@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom'
 import './App.css'
-import { Dashboad } from '../components/Dashboad'
 import { Landing } from '../components/Landing'
+import { Dashboad } from '../components/Dashboad'
 
 function App(){
   return (
@@ -9,8 +9,10 @@ function App(){
         <BrowserRouter>
           <Appbar />
             <Routes>
-              <Route path="/dashboad" element ={<Dashboad/>} />
-              <Route path="/" element ={<Landing/>} />
+              <Route path="/dashboad" 
+              element ={<Dashboad/>} />
+              <Route path="/"
+              element ={<Landing/>} />
             </Routes>
         </BrowserRouter>
     </div>
