@@ -1,4 +1,4 @@
-export default function Dashboad(){
+export  function Dashboad(){
     return <div>
         Dashboad page
     </div>

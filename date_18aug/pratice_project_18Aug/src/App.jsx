@@ -5,17 +5,13 @@ import { Dashboad } from '../components/Dashboad'
 
 function App(){
   return (
-    <div>
-        <BrowserRouter>
-          <Appbar />
-            <Routes>
-              <Route path="/dashboad" 
-              element ={<Dashboad/>} />
-              <Route path="/"
-              element ={<Landing/>} />
-            </Routes>
-        </BrowserRouter>
-    </div>
+      <BrowserRouter>
+        <Appbar />
+          <Routes>
+            <Route path="/dashboad" element ={<Dashboad/>} />
+            <Route path="/" element ={<Landing/>} />
+          </Routes>
+      </BrowserRouter>
   )
 }
 
