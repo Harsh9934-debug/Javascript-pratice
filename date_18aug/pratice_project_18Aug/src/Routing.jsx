@@ -1,6 +1,5 @@
 // This page is just an example to show the Routing and navigating between the pages
 
-
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom'
 import './App.css'
 import { Landing } from '../components/Landing'
