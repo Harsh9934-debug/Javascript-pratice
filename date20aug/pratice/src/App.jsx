@@ -1,18 +1,21 @@
-import React, { useState } from "react";
+import { useState } from "react"
 
-const App = () => {
+const App = () =>{
 
-  const [a, setA] = useState(10)
+  const [ number, setnumber] = useState(10)
 
-  const changeA =() =>{
-    setA (20)
+  const Increment=() => {
+    setnumber(number+10)
   }
-  return (
-    <div>
-      <h1>Username is {a}</h1>
-      <button onClick={changeA}>change A</button>
-    </div>
-  )
-}
 
+  const Decrement = () =>{
+    setnumber(number-10)
+  }
+  return <div>
+      <h1>The number is {number}</h1>
+      <button onClick={Increment}>Increment</button>
+      <button onClick={Decrement}>Decrement</button>
+    </div>
+  
+}
 export default App
