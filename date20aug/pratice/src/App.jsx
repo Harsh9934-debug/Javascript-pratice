@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 const App = () => {
-  const user = "harsh"
 
+  const [a, setA] = useState(10)
+
+  const changeA =() =>{
+    setA (20)
+  }
   return (
     <div>
-      <h1>Username is {user}</h1>
+      <h1>Username is {a}</h1>
+      <button onClick={changeA}>change A</button>
     </div>
   )
 }
