@@ -1,21 +1,21 @@
 const express = require('express');
-const router = express.Router();
+const app = express();
+const userRouter = require('./routes/user.routes');
+const path = require('path');
 
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
+app.use(express.static(path.join(__dirname, 'public')));
 
-router.get('/',(req,res) =>{
-    res.render('index')
-})
+// ✅ THIS MUST COME BEFORE THE ROUTER
+app.use(express.urlencoded({ extended: true })); // parse form POST
+app.use(express.json()); // parse JSON POST
 
-router.get('/register',(req,res) =>{
-    res.render('register')
-})
+// Mount router
+app.use('/user', userRouter);
 
-router.post('/register',async(req,res) =>{
+// Redirect root
+app.get('/', (req, res) => res.redirect('/user'));
 
-    console.log(req.body)
-    const {name,email,password} = req.body
-    res.send('user registered successfully')
-})
-
-module.exports = router;
+app.listen(3000, () => console.log("Server running on port 3000"));
