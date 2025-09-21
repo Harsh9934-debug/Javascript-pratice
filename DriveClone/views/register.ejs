@@ -4,47 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DriveClone - Register</title>
-    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style.css?v=3" rel="stylesheet">
 </head>
-<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
-    <form action="/register" method="post">
+<body class="bg-black text-white min-h-screen">
     <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-md w-full space-y-8">
             <div class="text-center">
-                <h1 class="text-4xl font-bold text-gray-900 mb-2">DriveClone</h1>
-                <h2 class="text-2xl font-semibold text-gray-700">Create your account</h2>
-                <p class="mt-2 text-sm text-gray-600">
+                <h1 class="text-4xl font-bold text-white mb-2">DriveClone</h1>
+                <h2 class="text-2xl font-semibold text-white">Create your account</h2>
+                <p class="mt-2 text-sm text-white">
                     Join DriveClone and start storing your files in the cloud
                 </p>
             </div>
             
-            <div class="bg-white rounded-lg shadow-xl p-8">
-                <form class="space-y-6">
+            <div class="bg-gray-900 rounded-lg shadow-xl p-8 border border-gray-700">
+                <form action="/register" method="post" class="space-y-6">
                     <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                        <label for="name" class="block text-sm font-medium text-white">Full Name</label>
                         <input type="text" id="name" name="name" required 
-                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                               class="mt-1 block w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-md shadow-sm placeholder-gray-400 text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                placeholder="Enter your full name">
                     </div>
                     
                     <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                        <label for="email" class="block text-sm font-medium text-white">Email Address</label>
                         <input type="email" id="email" name="email" required 
-                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                               class="mt-1 block w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-md shadow-sm placeholder-gray-400 text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                placeholder="Enter your email">
                     </div>
                     
                     <div>
-                        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                        <label for="password" class="block text-sm font-medium text-white">Password</label>
                         <input type="password" id="password" name="password" required 
-                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                               class="mt-1 block w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-md shadow-sm placeholder-gray-400 text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                placeholder="Enter your password">
                     </div>
                     
                     <div>
-                        <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+                        <label for="confirmPassword" class="block text-sm font-medium text-white">Confirm Password</label>
                         <input type="password" id="confirmPassword" name="confirmPassword" required 
-                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                               class="mt-1 block w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-md shadow-sm placeholder-gray-400 text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                placeholder="Confirm your password">
                     </div>
                     
@@ -55,17 +54,15 @@
                 </form>
                 
                 <div class="mt-6 text-center">
-                    <p class="text-sm text-gray-600">
+                    <p class="text-sm text-white">
                         Already have an account? 
-                        <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500 transition duration-200">
+                        <a href="#" class="font-medium text-indigo-400 hover:text-indigo-300 transition duration-200">
                             Sign in here
                         </a>
                     </p>
                 </div>
-            </div>
-            </div>
         </div>
-    </form>
+    </div>
 </body>
 </html>
 
