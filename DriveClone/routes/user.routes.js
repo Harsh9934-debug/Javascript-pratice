@@ -1,21 +1,43 @@
+// routes/user.routes.js
+
 const express = require('express');
-const app = express();
-const userRouter = require('./routes/user.routes');
-const path = require('path');
+const router = express.Router();
 
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+// Route to display the main landing page
+// URL: http://localhost:3000/user
+router.get('/', (req, res) => {
+    res.render('index');
+});
 
-app.use(express.static(path.join(__dirname, 'public')));
+// Route to display the registration form page
+// URL: http://localhost:3000/user/register
+router.get('/register', (req, res) => {
+    res.render('register');
+});
 
-// ✅ THIS MUST COME BEFORE THE ROUTER
-app.use(express.urlencoded({ extended: true })); // parse form POST
-app.use(express.json()); // parse JSON POST
+// Route to handle the registration form submission
+// Handles the POST request from the form
+router.post('/register', (req, res) => {
+    // Because of the middleware in app.js, req.body now contains your form data
+    const { name, email, password } = req.body;
 
-// Mount router
-app.use('/user', userRouter);
+    // Log the data to the terminal to confirm it's working
+    console.log("✅ New user data received:");
+    console.log({
+        fullName: name,
+        emailAddress: email,
+        chosenPassword: password, // Note: Never log passwords in a real application!
+    });
 
-// Redirect root
-app.get('/', (req, res) => res.redirect('/user'));
+    // Send a success response back to the user's browser
+    res.send(`
+        <div style="font-family: sans-serif; text-align: center; padding: 40px;">
+            <h1>Registration Successful!</h1>
+            <p>Thank you for signing up, <strong>${name}</strong>.</p>
+            <p>Your data has been received and logged to the server terminal.</p>
+            <a href="/user">Return to Home Page</a>
+        </div>
+    `);
+});
 
-app.listen(3000, () => console.log("Server running on port 3000"));
+module.exports = router;
