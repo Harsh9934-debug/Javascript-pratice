@@ -15,6 +15,7 @@ router.post('/register',async(req,res) =>{
 
     console.log(req.body)
     const {name,email,password} = req.body
+    res.send('user registered successfully')
 })
 
 module.exports = router;
