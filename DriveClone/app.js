@@ -5,8 +5,13 @@ const app = express()
 
 
 app.set('view engine','ejs')
+app.use(express.static('public'))
 
-app.user('/user',userRouter)
+app.get('/', (req, res) => {
+    res.redirect('/user')
+})
+
+app.use('/user',userRouter)
 
 app.listen(3000,() =>{
     console.log("Server is running at the port 3000")

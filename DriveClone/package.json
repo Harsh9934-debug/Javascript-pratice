@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "tailwindcss -i ./public/css/input.css -o ./public/css/style.css",
+    "watch-css": "tailwindcss -i ./public/css/input.css -o ./public/css/style.css --watch",
+    "start": "node app.js",
+    "dev": "npm run watch-css & npm start"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +17,10 @@
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.13"
   }
 }
