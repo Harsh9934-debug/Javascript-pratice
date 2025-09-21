@@ -1,187 +1,582 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DriveClone - Cloud Storage</title>
-  <meta name="description" content="DriveClone - Simple, secure, and fast cloud storage with unlimited storage and bank-level security. Start your free trial today.">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://kit.fontawesome.com/a2e0e6ad8d.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveClone - Cloud Storage Made Simple</title>
+    <link href="/css/style.css?v=4" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="font-sans antialiased">
+<body class="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 min-h-screen overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="bg-white/80 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-gradient-to-r from-indigo-500 to-blue-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-cloud text-white text-sm"></i>
+                        </div>
+                        <h1 class="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">DriveClone</h1>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#features" class="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-indigo-50">
+                        Features
+                    </a>
+                    <a href="/user/register" class="bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-  <!-- Navbar -->
-  <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-lg shadow-md z-50">
-    <div class="container mx-auto flex justify-between items-center p-4">
-      <div class="flex items-center space-x-2 text-2xl font-bold text-indigo-600">
-        <i class="fas fa-cloud"></i>
-        <span>DriveClone</span>
-      </div>
-      <div class="hidden md:flex space-x-8 text-gray-700 font-medium">
-        <a href="#features" class="hover:text-indigo-600">Features</a>
-        <a href="#pricing" class="hover:text-indigo-600">Pricing</a>
-        <a href="#testimonials" class="hover:text-indigo-600">Testimonials</a>
-        <a href="#faq" class="hover:text-indigo-600">FAQ</a>
-      </div>
-      <div class="hidden md:flex space-x-4">
-        <button class="px-4 py-2 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition">
-          Get Started
-        </button>
-      </div>
-      <button id="menu-btn" class="md:hidden text-gray-700 text-2xl">☰</button>
+    <!-- Hero Section -->
+    <div class="relative overflow-hidden bg-gradient-to-br from-white via-blue-50 to-indigo-100">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-r from-indigo-400 to-blue-500 rounded-full opacity-20 animate-pulse"></div>
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full opacity-20 animate-pulse" style="animation-delay: 1s;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                    <div class="sm:text-center lg:text-left">
+                        <div class="inline-flex items-center px-4 py-2 rounded-full bg-indigo-100 text-indigo-800 text-sm font-medium mb-6 animate-fade-in">
+                            <i class="fas fa-rocket mr-2"></i>
+                            New: Enhanced Security Features
+                        </div>
+                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl animate-slide-up">
+                            <span class="block xl:inline">Store your files</span>
+                            <span class="block bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent xl:inline">in the cloud</span>
+                        </h1>
+                        <p class="mt-6 text-lg text-gray-600 sm:text-xl sm:max-w-2xl sm:mx-auto md:mt-5 lg:mx-0 animate-slide-up" style="animation-delay: 0.2s;">
+                            Secure, reliable, and easy-to-use cloud storage solution. Access your files from anywhere, anytime with enterprise-grade security.
+                        </p>
+                        <div class="mt-8 sm:flex sm:justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4 animate-slide-up" style="animation-delay: 0.4s;">
+                            <a href="/user/register" class="w-full sm:w-auto flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-xl text-white bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                                <i class="fas fa-play mr-2"></i>
+                                Start Free Trial
+                            </a>
+                            <a href="#features" class="w-full sm:w-auto flex items-center justify-center px-8 py-4 border border-gray-300 text-base font-medium rounded-xl text-gray-700 bg-white hover:bg-gray-50 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                                <i class="fas fa-info-circle mr-2"></i>
+                                Learn More
+                            </a>
+                        </div>
+                        
+                        <!-- Trust Indicators -->
+                        <div class="mt-12 animate-fade-in" style="animation-delay: 0.6s;">
+                            <p class="text-sm text-gray-500 mb-4">Trusted by over 100,000+ users worldwide</p>
+                            <div class="flex items-center space-x-8 opacity-60">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-shield-alt text-green-500"></i>
+                                    <span class="text-sm font-medium text-gray-600">99.9% Uptime</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-lock text-blue-500"></i>
+                                    <span class="text-sm font-medium text-gray-600">256-bit Encryption</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-download text-purple-500"></i>
+                                    <span class="text-sm font-medium text-gray-600">Unlimited Bandwidth</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        
+        <!-- Enhanced Right Side -->
+        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+            <div class="h-56 w-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 sm:h-72 md:h-96 lg:w-full lg:h-full flex items-center justify-center relative overflow-hidden">
+                <!-- Floating Elements -->
+                <div class="absolute top-10 left-10 w-16 h-16 bg-white/20 rounded-full animate-bounce" style="animation-delay: 0.5s;"></div>
+                <div class="absolute top-20 right-20 w-12 h-12 bg-white/30 rounded-full animate-bounce" style="animation-delay: 1s;"></div>
+                <div class="absolute bottom-20 left-20 w-20 h-20 bg-white/10 rounded-full animate-bounce" style="animation-delay: 1.5s;"></div>
+                
+                <div class="text-white text-center z-10">
+                    <div class="relative">
+                        <i class="fas fa-cloud-upload-alt text-8xl mb-6 animate-pulse"></i>
+                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-green-400 rounded-full flex items-center justify-center">
+                            <i class="fas fa-check text-white text-xs"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Your Files, Secured</h3>
+                    <p class="text-lg opacity-90">Advanced encryption & backup</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="menu" class="hidden md:hidden bg-white shadow-md">
-      <a href="#features" class="block px-4 py-2">Features</a>
-      <a href="#pricing" class="block px-4 py-2">Pricing</a>
-      <a href="#testimonials" class="block px-4 py-2">Testimonials</a>
-      <a href="#faq" class="block px-4 py-2">FAQ</a>
+
+    <!-- Features Section -->
+    <div id="features" class="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-indigo-100 text-indigo-800 text-sm font-medium mb-4">
+                    <i class="fas fa-star mr-2"></i>
+                    Why Choose DriveClone
+                </div>
+                <h2 class="text-4xl font-bold text-gray-900 sm:text-5xl">
+                    Everything you need for 
+                    <span class="bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">secure storage</span>
+                </h2>
+                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                    Powerful features designed to keep your files safe, accessible, and organized.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Bank-Level Security</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Your files are encrypted with 256-bit AES encryption and stored in our secure, SOC 2 compliant data centers.
+                    </p>
+                    <div class="mt-6 flex items-center text-indigo-600 font-medium group-hover:text-indigo-700 transition-colors">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-bolt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Lightning Fast</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Upload and download files at blazing speeds with our global CDN network and optimized infrastructure.
+                    </p>
+                    <div class="mt-6 flex items-center text-green-600 font-medium group-hover:text-green-700 transition-colors">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-mobile-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Access Anywhere</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Access your files from any device, anywhere in the world with our responsive web app and mobile apps.
+                    </p>
+                    <div class="mt-6 flex items-center text-purple-600 font-medium group-hover:text-purple-700 transition-colors">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-sync-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Auto Backup</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Never lose your files again with automatic backups and version history for all your important documents.
+                    </p>
+                    <div class="mt-6 flex items-center text-orange-600 font-medium group-hover:text-orange-700 transition-colors">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Team Collaboration</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Share files securely with your team and collaborate in real-time with advanced permission controls.
+                    </p>
+                    <div class="mt-6 flex items-center text-teal-600 font-medium group-hover:text-teal-700 transition-colors">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-infinity text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Unlimited Storage</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Store unlimited files without worrying about storage limits. Scale as your needs grow.
+                    </p>
+                    <div class="mt-6 flex items-center text-yellow-600 font-medium group-hover:text-yellow-700 transition-colors">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </nav>
 
-  <!-- Hero -->
-  <section class="pt-32 pb-20 bg-gradient-to-br from-indigo-600 via-blue-500 to-purple-600 text-white relative">
-    <div class="container mx-auto px-6 text-center">
-      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
-        Store & Protect Your Files with <span class="text-yellow-300">Confidence</span>
-      </h1>
-      <p class="mt-6 text-lg max-w-2xl mx-auto">
-        Secure cloud storage that’s simple, fast, and reliable.
-      </p>
-      <div class="mt-8 flex justify-center space-x-4">
-        <button class="px-6 py-3 bg-yellow-400 text-gray-900 font-semibold rounded-xl shadow-lg hover:bg-yellow-500 transition">
-          Start Free Trial
-        </button>
-        <button class="px-6 py-3 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-indigo-600 transition">
-          Learn More
-        </button>
-      </div>
+    <!-- Stats Section -->
+    <div class="py-20 bg-gradient-to-r from-indigo-600 to-blue-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">
+                    Trusted by millions worldwide
+                </h2>
+                <p class="text-xl text-indigo-100 max-w-2xl mx-auto">
+                    Join the growing community of users who rely on DriveClone for their file storage needs.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-white mb-2">100K+</div>
+                    <div class="text-indigo-200">Active Users</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-white mb-2">99.9%</div>
+                    <div class="text-indigo-200">Uptime</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-white mb-2">1TB+</div>
+                    <div class="text-indigo-200">Files Stored</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-white mb-2">24/7</div>
+                    <div class="text-indigo-200">Support</div>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <!-- Features -->
-  <section id="features" class="py-20 bg-gray-50">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12">Why Choose DriveClone?</h2>
-      <div class="grid md:grid-cols-3 gap-12">
-        <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition">
-          <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6">
-            <i class="fas fa-shield-alt text-white text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-4">Bank-Level Security</h3>
-          <p class="text-gray-600">256-bit AES encryption with zero-knowledge privacy.</p>
+    <!-- Testimonials Section -->
+    <div class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium mb-4">
+                    <i class="fas fa-heart mr-2"></i>
+                    Customer Love
+                </div>
+                <h2 class="text-4xl font-bold text-gray-900 sm:text-5xl">
+                    What our users are saying
+                </h2>
+                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                    Don't just take our word for it. Here's what real users say about DriveClone.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        "DriveClone has revolutionized how we manage our files. The security features are top-notch and the interface is incredibly intuitive."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+                            SJ
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-semibold text-gray-900">Sarah Johnson</div>
+                            <div class="text-sm text-gray-500">CEO, TechStart Inc.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        "The speed and reliability are unmatched. I've never had any issues with file uploads or downloads. Highly recommended!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-white font-bold">
+                            MC
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-semibold text-gray-900">Michael Chen</div>
+                            <div class="text-sm text-gray-500">Designer, Creative Studio</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        "Perfect for team collaboration. The sharing features and permission controls make it easy to work with my team remotely."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">
+                            AR
+                        </div>
+                        <div class="ml-4">
+                            <div class="font-semibold text-gray-900">Alex Rodriguez</div>
+                            <div class="text-sm text-gray-500">Project Manager, Global Corp</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition">
-          <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-6">
-            <i class="fas fa-bolt text-white text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-4">Lightning Fast</h3>
-          <p class="text-gray-600">Upload and download at blazing speeds.</p>
-        </div>
-        <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition">
-          <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
-            <i class="fas fa-cloud-upload-alt text-white text-2xl"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-4">Unlimited Storage</h3>
-          <p class="text-gray-600">Never worry about running out of space.</p>
-        </div>
-      </div>
     </div>
-  </section>
 
-  <!-- Pricing -->
-  <section id="pricing" class="py-20 bg-white">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12">Pricing Plans</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="border rounded-2xl p-8 shadow hover:shadow-xl transition">
-          <h3 class="text-xl font-bold mb-4">Basic</h3>
-          <p class="text-3xl font-extrabold mb-4">$5<span class="text-lg">/mo</span></p>
-          <ul class="text-gray-600 mb-6 space-y-2">
-            <li>✔ 100GB Storage</li>
-            <li>✔ Secure Backup</li>
-            <li>✔ 24/7 Support</li>
-          </ul>
-          <button class="px-6 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition">Choose</button>
+    <!-- Pricing Section -->
+    <div class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-indigo-100 text-indigo-800 text-sm font-medium mb-4">
+                    <i class="fas fa-tag mr-2"></i>
+                    Simple Pricing
+                </div>
+                <h2 class="text-4xl font-bold text-gray-900 sm:text-5xl">
+                    Choose your perfect plan
+                </h2>
+                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                    Start free and scale as you grow. No hidden fees, no surprises.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Free Plan -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Free</h3>
+                        <div class="text-4xl font-bold text-gray-900 mb-4">$0<span class="text-lg text-gray-500">/month</span></div>
+                        <p class="text-gray-600 mb-6">Perfect for getting started</p>
+                        <ul class="text-left space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-gray-600">5GB Storage</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-gray-600">Basic Security</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-gray-600">Email Support</span>
+                            </li>
+                        </ul>
+                        <a href="/user/register" class="w-full bg-gray-900 hover:bg-gray-800 text-white py-3 px-6 rounded-xl font-medium transition-colors duration-300 inline-block">
+                            Get Started Free
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl p-8 shadow-2xl transform scale-105 relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-yellow-400 text-yellow-900 px-4 py-1 rounded-full text-sm font-medium">Most Popular</span>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-white mb-2">Pro</h3>
+                        <div class="text-4xl font-bold text-white mb-4">$9<span class="text-lg text-indigo-200">/month</span></div>
+                        <p class="text-indigo-200 mb-6">Best for professionals</p>
+                        <ul class="text-left space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                <span class="text-white">100GB Storage</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                <span class="text-white">Advanced Security</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                <span class="text-white">Priority Support</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                <span class="text-white">Team Collaboration</span>
+                            </li>
+                        </ul>
+                        <a href="/user/register" class="w-full bg-white hover:bg-gray-100 text-indigo-600 py-3 px-6 rounded-xl font-medium transition-colors duration-300 inline-block">
+                            Start Pro Trial
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Enterprise</h3>
+                        <div class="text-4xl font-bold text-gray-900 mb-4">$29<span class="text-lg text-gray-500">/month</span></div>
+                        <p class="text-gray-600 mb-6">For large teams</p>
+                        <ul class="text-left space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-gray-600">Unlimited Storage</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-gray-600">Enterprise Security</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-gray-600">24/7 Phone Support</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span class="text-gray-600">Custom Integrations</span>
+                            </li>
+                        </ul>
+                        <a href="/user/register" class="w-full bg-gray-900 hover:bg-gray-800 text-white py-3 px-6 rounded-xl font-medium transition-colors duration-300 inline-block">
+                            Contact Sales
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="border-2 border-indigo-600 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition transform scale-105">
-          <h3 class="text-xl font-bold mb-4">Pro</h3>
-          <p class="text-3xl font-extrabold mb-4">$15<span class="text-lg">/mo</span></p>
-          <ul class="text-gray-600 mb-6 space-y-2">
-            <li>✔ 1TB Storage</li>
-            <li>✔ Advanced Security</li>
-            <li>✔ Priority Support</li>
-          </ul>
-          <button class="px-6 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition">Choose</button>
-        </div>
-        <div class="border rounded-2xl p-8 shadow hover:shadow-xl transition">
-          <h3 class="text-xl font-bold mb-4">Enterprise</h3>
-          <p class="text-3xl font-extrabold mb-4">$50<span class="text-lg">/mo</span></p>
-          <ul class="text-gray-600 mb-6 space-y-2">
-            <li>✔ Unlimited Storage</li>
-            <li>✔ Dedicated Manager</li>
-            <li>✔ SLA Guarantee</li>
-          </ul>
-          <button class="px-6 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition">Choose</button>
-        </div>
-      </div>
     </div>
-  </section>
 
-  <!-- Testimonials -->
-  <section id="testimonials" class="py-20 bg-gray-50">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12">What Our Users Say</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-2xl p-6 shadow">
-          <p class="text-gray-600 italic">"DriveClone makes file storage effortless and secure."</p>
-          <h4 class="mt-4 font-bold">– Alex, Developer</h4>
+    <!-- CTA Section -->
+    <div class="relative bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 bg-black opacity-10"></div>
+        <div class="absolute inset-0">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-y-1"></div>
         </div>
-        <div class="bg-white rounded-2xl p-6 shadow">
-          <p class="text-gray-600 italic">"Super fast uploads and peace of mind with security."</p>
-          <h4 class="mt-4 font-bold">– Priya, Designer</h4>
+        
+        <div class="relative max-w-4xl mx-auto text-center py-20 px-4 sm:px-6 lg:px-8">
+            <div class="inline-flex items-center px-6 py-3 rounded-full bg-white/20 text-white text-sm font-medium mb-8 backdrop-blur-sm">
+                <i class="fas fa-gift mr-2"></i>
+                Limited Time: 30 Days Free Trial
+            </div>
+            
+            <h2 class="text-4xl font-bold text-white sm:text-5xl lg:text-6xl mb-6">
+                Ready to transform your 
+                <span class="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">file storage</span>?
+            </h2>
+            
+            <p class="text-xl text-indigo-100 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Join over 100,000+ users who trust DriveClone with their most important files. Start your free trial today - no credit card required.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="/user/register" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-xl text-indigo-600 bg-white hover:bg-gray-50 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <i class="fas fa-rocket mr-2"></i>
+                    Start Free Trial
+                </a>
+                <a href="#features" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-lg font-medium rounded-xl text-white hover:bg-white/10 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm">
+                    <i class="fas fa-play mr-2"></i>
+                    Watch Demo
+                </a>
+            </div>
+            
+            <div class="mt-12 flex items-center justify-center space-x-8 text-indigo-200">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-check-circle text-green-400"></i>
+                    <span class="text-sm">No credit card required</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-check-circle text-green-400"></i>
+                    <span class="text-sm">Cancel anytime</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-check-circle text-green-400"></i>
+                    <span class="text-sm">24/7 support</span>
+                </div>
+            </div>
         </div>
-        <div class="bg-white rounded-2xl p-6 shadow">
-          <p class="text-gray-600 italic">"Finally, unlimited storage at a fair price!"</p>
-          <h4 class="mt-4 font-bold">– John, Freelancer</h4>
-        </div>
-      </div>
     </div>
-  </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="py-20 bg-white">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-      <div class="space-y-6 max-w-3xl mx-auto">
-        <div>
-          <h3 class="font-bold">Is my data secure?</h3>
-          <p class="text-gray-600">Yes, we use end-to-end encryption and zero-knowledge privacy.</p>
+    <!-- Footer -->
+    <footer class="bg-gray-900">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Brand -->
+                <div class="md:col-span-1">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-r from-indigo-500 to-blue-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-cloud text-white text-sm"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-white">DriveClone</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Secure, reliable cloud storage for individuals and businesses worldwide.
+                    </p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Product</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Security</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">API</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Company -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Company</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Support</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Status</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Community</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2024 DriveClone. All rights reserved.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a>
+                </div>
+            </div>
         </div>
-        <div>
-          <h3 class="font-bold">Can I upgrade my plan anytime?</h3>
-          <p class="text-gray-600">Absolutely, you can switch plans whenever you need.</p>
-        </div>
-        <div>
-          <h3 class="font-bold">Do you offer a free trial?</h3>
-          <p class="text-gray-600">Yes, all plans include a 14-day free trial.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-10 text-center text-gray-500 bg-gray-100">
-    © <span id="year"></span> DriveClone. All rights reserved.
-  </footer>
-
-  <script>
-    // Mobile menu toggle
-    const btn = document.getElementById("menu-btn");
-    const menu = document.getElementById("menu");
-    btn.addEventListener("click", () => menu.classList.toggle("hidden"));
-
-    // Dynamic year
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+    </footer>
 </body>
 </html>
