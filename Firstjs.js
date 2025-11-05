@@ -5,7 +5,3 @@ console.log("Hello, World!");
 
 
 
-
-
-
-
