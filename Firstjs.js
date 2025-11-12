@@ -7,20 +7,3 @@ console.log("Hello, World!");
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
