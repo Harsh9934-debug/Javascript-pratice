@@ -2,18 +2,3 @@ console.log("Hello, World!");
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
