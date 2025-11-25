@@ -1,10 +1,10 @@
 function greet(user) {
     if (user.gender == "male") {
-        return "Welcome Mr. " + user.firstname;
+        return "Welcome Mr. " + user.firstname + "and your age is "+user.age;
     } else if (user.gender == "female") {
-        return "Welcome Mrs. " + user.firstname;
+        return "Welcome Mrs. " + user.firstname + "and your age is "+user.age;
     } else {
-        return "Welcome Miss. " + user.firstname;
+        return "Welcome Miss. " + user.firstname + "and your age is "+user.ag;
     }
 }
 
