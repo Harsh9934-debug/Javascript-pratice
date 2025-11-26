@@ -21,7 +21,7 @@ let users=[
     },
     {
     firstname:"honey",
-    age:170,
+    age:17,
     gender:"female"     
     },
 
