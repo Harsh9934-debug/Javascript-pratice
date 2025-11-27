@@ -8,10 +8,6 @@ function filterAdultMales(users) {
     }
     return adultMales;
 }
-
-
-
-
  
 let users=[
     {
