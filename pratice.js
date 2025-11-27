@@ -8,7 +8,7 @@ function filterAdultMales(users) {
     }
     return adultMales;
 }
- 
+
 let users=[
     {
     firstname:"sakshi",
