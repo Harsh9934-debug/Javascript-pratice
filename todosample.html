@@ -16,6 +16,9 @@
         const buttonEl=document.createElement("button")
         spanEl.innerHTML=value;
         buttonEl.innerHTML="Delete";
+        buttonEl.onclick=function(){
+            buttonEl.parentElement.remove();
+        }   
         const divEl=document.createElement("div");
         divEl.appendChild(spanEl);
         divEl.appendChild(buttonEl);
