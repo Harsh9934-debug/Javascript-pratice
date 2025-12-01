@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button onclick="addTodo()">Add todos</button>
+</body>
+<script>
+    let todos=[];
+    function addTodo(){
+        todos.push({title:document.querySelector("input").value});
+        render();
+    }
+
+    function render(){
+        for(let i=0;i<todos.length;i++){
+           const todo=todos[i];
+           const div=document.createElement("div");
+           const h1=document.createElement("h1");
+           const button=document.createElement("button");
+           button.innerHTML="Delete";
+           h1.innerHTML=todo.title;
+           div.appendChild(h1);
+           div.appendChild(button);
+           document.querySelector("body").appendChild(div);
+        }
+    }
+</script>
+</html> 
