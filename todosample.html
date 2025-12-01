@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button onclick="addTodo()">Add todo </button>
+</body>
+<script>
+    function addTodo(){
+        const value=document.querySelector("input").value;
+        const spanEl=document.createElement("span");
+        const buttonEl=document.createElement("button")
+        spanEl.innerHTML=value;
+        buttonEl.innerHTML="Delete";
+        const divEl=document.createElement("div");
+        divEl.appendChild(spanEl);
+        divEl.appendChild(buttonEl);
+        document.querySelector("body").appendChild(divEl);
+    }
+</script>
+</html>
+
+<!-- this is how the div and the span is getting created and this is how this is creating the span and the button and the div on the top of this like a layer -->
+<!-- 
+<div>
+    <span>asdf</span>
+    <button>Delete</button>
+</div> 
+-->
