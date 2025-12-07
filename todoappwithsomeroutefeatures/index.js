@@ -214,6 +214,8 @@ app.delete('/todos/:id', (req, res) => {
             })
         }
 
+        
+
         const deletedTodo = todos.splice(todoIndex, 1)[0]
         saveToFile() 
 
