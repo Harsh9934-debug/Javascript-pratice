@@ -256,10 +256,4 @@ loadFromFile()
 
 app.listen(PORT, () => {
     console.log(`Todo API Server running on http://localhost:${PORT}`)
-    console.log(`Data persistence: Enabled (JSON file storage)`)
-    console.log(`Test your API endpoints with Postman:`)
-    console.log(`   GET    http://localhost:${PORT}/todos`)
-    console.log(`   POST   http://localhost:${PORT}/todos`)
-    console.log(`   PUT    http://localhost:${PORT}/todos/:id`)
-    console.log(`   DELETE http://localhost:${PORT}/todos/:id`)
 })
