@@ -1,11 +1,56 @@
 const express = require('express')
 const app = express()
 
-// Middleware
-app.use(express.json()) // Parse JSON bodies
-app.use(express.urlencoded({ extended: true })) // Parse URL-encoded bodies
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
-// Enable CORS for Postman testing
+const fs = require('fs')
+const path = require('path')
+
+
+const TODOS_FILE = path.join(__dirname, 'todos.json')
+
+
+const saveToFile = () => {
+    try {
+        fs.writeFileSync(TODOS_FILE, JSON.stringify(todos, null, 2))
+        console.log(' Data saved to todos.json')
+    } catch (error) {
+        console.error(' Error saving data:', error.message)
+    }
+}
+
+const loadFromFile = () => {
+    try {
+        if (fs.existsSync(TODOS_FILE)) {
+            const data = fs.readFileSync(TODOS_FILE, 'utf8')
+            const loadedTodos = JSON.parse(data)
+            
+
+            loadedTodos.forEach(todo => {
+                todo.createdAt = new Date(todo.createdAt)
+                if (todo.updatedAt) {
+                    todo.updatedAt = new Date(todo.updatedAt)
+                }
+            })
+            
+            todos = loadedTodos
+            
+
+            nextId = todos.length > 0 ? Math.max(...todos.map(t => t.id)) + 1 : 1
+            
+            console.log(` Loaded ${todos.length} todos from file`)
+        } else {
+            console.log(' No existing data file, using default todos')
+            saveToFile()
+        }
+    } catch (error) {
+        console.error(' Error loading data:', error.message)
+        console.log(' Using default todos')
+    }
+}
+
+
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*')
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
@@ -17,7 +62,6 @@ app.use((req, res, next) => {
     }
 })
 
-// In-memory data storage (replace with database in production)
 let todos = [
     { id: 1, title: "Learn Node.js", description: "Complete Node.js tutorial", completed: false, createdAt: new Date() },
     { id: 2, title: "Build REST API", description: "Create todo REST API", completed: false, createdAt: new Date() },
@@ -25,12 +69,8 @@ let todos = [
 ]
 let nextId = 4
 
-// Helper function to find todo by ID
 const findTodoById = (id) => todos.find(todo => todo.id === parseInt(id))
 
-// Routes
-
-// GET / - API Info
 app.get('/', (req, res) => {
     res.json({
         message: "Todo API Server",
@@ -63,7 +103,7 @@ app.get('/api/todos', (req, res) => {
     }
 })
 
-// GET /api/todos/:id - Get single todo
+
 app.get('/api/todos/:id', (req, res) => {
     try {
         const todo = findTodoById(req.params.id)
@@ -88,7 +128,7 @@ app.get('/api/todos/:id', (req, res) => {
     }
 })
 
-// POST /api/todos - Create new todo
+
 app.post('/api/todos', (req, res) => {
     try {
         const { title, description } = req.body
@@ -111,6 +151,7 @@ app.post('/api/todos', (req, res) => {
         }
 
         todos.push(newTodo)
+        saveToFile() 
 
         res.status(201).json({
             success: true,
@@ -126,7 +167,7 @@ app.post('/api/todos', (req, res) => {
     }
 })
 
-// PUT /api/todos/:id - Update todo
+
 app.put('/api/todos/:id', (req, res) => {
     try {
         const todo = findTodoById(req.params.id)
@@ -140,11 +181,13 @@ app.put('/api/todos/:id', (req, res) => {
 
         const { title, description, completed } = req.body
 
-        // Update fields if provided
+
         if (title !== undefined) todo.title = title.trim()
         if (description !== undefined) todo.description = description.trim()
         if (completed !== undefined) todo.completed = Boolean(completed)
         todo.updatedAt = new Date()
+        
+        saveToFile() 
 
         res.status(200).json({
             success: true,
@@ -160,7 +203,6 @@ app.put('/api/todos/:id', (req, res) => {
     }
 })
 
-// DELETE /api/todos/:id - Delete todo
 app.delete('/api/todos/:id', (req, res) => {
     try {
         const todoIndex = todos.findIndex(todo => todo.id === parseInt(req.params.id))
@@ -173,6 +215,7 @@ app.delete('/api/todos/:id', (req, res) => {
         }
 
         const deletedTodo = todos.splice(todoIndex, 1)[0]
+        saveToFile() 
 
         res.status(200).json({
             success: true,
@@ -188,7 +231,7 @@ app.delete('/api/todos/:id', (req, res) => {
     }
 })
 
-// 404 handler for undefined routes
+
 app.use((req, res) => {
     res.status(404).json({
         success: false,
@@ -196,7 +239,7 @@ app.use((req, res) => {
     })
 })
 
-// Error handling middleware
+
 app.use((error, req, res, next) => {
     console.error(error.stack)
     res.status(500).json({
@@ -208,9 +251,13 @@ app.use((error, req, res, next) => {
 
 const PORT = process.env.PORT || 3000
 
+
+loadFromFile()
+
 app.listen(PORT, () => {
-    console.log(`🚀 Todo API Server running on http://localhost:${PORT}`)
-    console.log(`📋 Test your API endpoints with Postman:`)
+    console.log(`Todo API Server running on http://localhost:${PORT}`)
+    console.log(`Data persistence: Enabled (JSON file storage)`)
+    console.log(`Test your API endpoints with Postman:`)
     console.log(`   GET    http://localhost:${PORT}/api/todos`)
     console.log(`   POST   http://localhost:${PORT}/api/todos`)
     console.log(`   PUT    http://localhost:${PORT}/api/todos/:id`)

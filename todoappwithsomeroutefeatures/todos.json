@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Learn Node.js",
+    "description": "Complete Node.js tutorial",
+    "completed": false,
+    "createdAt": "2025-12-07T16:19:41.290Z"
+  },
+  {
+    "id": 2,
+    "title": "Build REST API",
+    "description": "Create todo REST API",
+    "completed": false,
+    "createdAt": "2025-12-07T16:19:41.290Z"
+  },
+  {
+    "id": 3,
+    "title": "Test with Postman",
+    "description": "Test all API endpoints",
+    "completed": true,
+    "createdAt": "2025-12-07T16:19:41.290Z"
+  }
+]
