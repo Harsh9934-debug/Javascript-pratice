@@ -19,5 +19,12 @@
     "description": "Test all API endpoints",
     "completed": true,
     "createdAt": "2025-12-07T16:19:41.290Z"
+  },
+  {
+    "id": 4,
+    "title": "hello this is the sample todo application",
+    "description": "testing the sample todo case",
+    "completed": false,
+    "createdAt": "2025-12-07T16:30:08.707Z"
   }
 ]

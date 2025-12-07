@@ -77,17 +77,17 @@ app.get('/', (req, res) => {
         version: "1.0.0",
         endpoints: {
             "GET /": "API information",
-            "GET /api/todos": "Get all todos",
-            "GET /api/todos/:id": "Get todo by ID",
-            "POST /api/todos": "Create new todo",
-            "PUT /api/todos/:id": "Update todo by ID", 
-            "DELETE /api/todos/:id": "Delete todo by ID"
+            "GET /todos": "Get all todos",
+            "GET /todos/:id": "Get todo by ID",
+            "POST /todos": "Create new todo",
+            "PUT /todos/:id": "Update todo by ID", 
+            "DELETE /todos/:id": "Delete todo by ID"
         }
     })
 })
 
-// GET /api/todos - Get all todos
-app.get('/api/todos', (req, res) => {
+// GET /todos - Get all todos
+app.get('/todos', (req, res) => {
     try {
         res.status(200).json({
             success: true,
@@ -104,7 +104,7 @@ app.get('/api/todos', (req, res) => {
 })
 
 
-app.get('/api/todos/:id', (req, res) => {
+app.get('/todos/:id', (req, res) => {
     try {
         const todo = findTodoById(req.params.id)
         
@@ -129,7 +129,7 @@ app.get('/api/todos/:id', (req, res) => {
 })
 
 
-app.post('/api/todos', (req, res) => {
+app.post('/todos', (req, res) => {
     try {
         const { title, description } = req.body
 
@@ -168,7 +168,7 @@ app.post('/api/todos', (req, res) => {
 })
 
 
-app.put('/api/todos/:id', (req, res) => {
+app.put('/todos/:id', (req, res) => {
     try {
         const todo = findTodoById(req.params.id)
         
@@ -203,7 +203,7 @@ app.put('/api/todos/:id', (req, res) => {
     }
 })
 
-app.delete('/api/todos/:id', (req, res) => {
+app.delete('/todos/:id', (req, res) => {
     try {
         const todoIndex = todos.findIndex(todo => todo.id === parseInt(req.params.id))
         
@@ -258,8 +258,8 @@ app.listen(PORT, () => {
     console.log(`Todo API Server running on http://localhost:${PORT}`)
     console.log(`Data persistence: Enabled (JSON file storage)`)
     console.log(`Test your API endpoints with Postman:`)
-    console.log(`   GET    http://localhost:${PORT}/api/todos`)
-    console.log(`   POST   http://localhost:${PORT}/api/todos`)
-    console.log(`   PUT    http://localhost:${PORT}/api/todos/:id`)
-    console.log(`   DELETE http://localhost:${PORT}/api/todos/:id`)
+    console.log(`   GET    http://localhost:${PORT}/todos`)
+    console.log(`   POST   http://localhost:${PORT}/todos`)
+    console.log(`   PUT    http://localhost:${PORT}/todos/:id`)
+    console.log(`   DELETE http://localhost:${PORT}/todos/:id`)
 })
