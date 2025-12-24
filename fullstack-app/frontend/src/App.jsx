@@ -17,12 +17,6 @@ function App() {
     loadTodos();
   }, []);
 
-
-
-
-
-  
-  // Load todos from API
   const loadTodos = async () => {
     try {
       setLoading(true);
@@ -53,7 +47,7 @@ function App() {
       console.log('➕ Created todo:', response.data);
     } catch (err) {
       setError(err.message);
-      console.error('❌ Error creating todo:', err);
+      console.error(' Error creating todo:', err);
     }
   };
 
@@ -70,7 +64,7 @@ function App() {
       console.log('✏️ Toggled todo:', response.data);
     } catch (err) {
       setError(err.message);
-      console.error('❌ Error toggling todo:', err);
+      console.error(' Error toggling todo:', err);
     }
   };
 
