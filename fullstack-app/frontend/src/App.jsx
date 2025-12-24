@@ -93,7 +93,7 @@ function App() {
       console.log('✏️ Updated todo:', response.data);
     } catch (err) {
       setError(err.message);
-      console.error('❌ Error updating todo:', err);
+      console.error('Error updating todo:', err);
     }
   };
 
@@ -116,7 +116,7 @@ function App() {
       console.log('🗑️ Deleted todo:', id);
     } catch (err) {
       setError(err.message);
-      console.error('❌ Error deleting todo:', err);
+      console.error('Error deleting todo:', err);
     }
   };
 
