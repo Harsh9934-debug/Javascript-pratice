@@ -1,1 +1,0 @@
-alert("File loaded")
