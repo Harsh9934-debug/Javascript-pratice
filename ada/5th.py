@@ -10,4 +10,4 @@ def quick_sort(arr):
 
 elements = list(map(int, input("Enter elements: ").split()))
 sorted_elements = quick_sort(elements)
-print("Sorted elements:", sorted_elements)
+print("Sorted elements are :", sorted_elements)
