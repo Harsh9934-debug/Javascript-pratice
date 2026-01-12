@@ -28,6 +28,6 @@ def merge_sort(arr):
             j += 1
             k += 1
     return arr
-elements = list(map(int, input("Enter elements: ").split()))
+elements = list(map(int, input("Enter elements with the spacing: ").split()))
 sorted_elements = merge_sort(elements)
 print("Sorted elements are :", sorted_elements)
