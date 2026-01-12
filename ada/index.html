@@ -568,7 +568,7 @@
         .pa-value-item {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 0;
             padding: 10px;
             border-radius: 8px;
             transition: var(--transition);
@@ -590,11 +590,20 @@
             color: #999;
         }
 
-        @media(max-width: 768px) {
+        @media(max-width: 900px) {
             .pa-footer-bottom {
                 flex-direction: column;
                 gap: 20px;
                 text-align: center;
+            }
+
+            .pa-footer {
+                padding: 60px 0 30px;
+            }
+
+            .pa-footer-watermark {
+                font-size: 15vw;
+                top: 0;
             }
         }
 
@@ -735,6 +744,7 @@
                 gap: 40px;
                 text-align: center !important;
                 justify-items: center;
+                align-items: center !important;
             }
 
             /* Stack other grids if needed, though auto-fit handles most */
@@ -1238,20 +1248,22 @@
                         trust.</p>
                 </div>
 
-                <!-- Company -->
-                <div>
-                    <h3>Company</h3>
-                    <a href="#about">About Us</a>
-                    <a href="#products">Products</a>
-                    <a href="#contact">Contact Us</a>
-                </div>
+                <!-- Company & Socials Group -->
+                <div style="display: flex; gap: 60px; flex-wrap: wrap;">
+                    <div>
+                        <h3>Company</h3>
+                        <a href="#about">About Us</a>
+                        <a href="#products">Products</a>
+                        <a href="#contact">Contact Us</a>
+                    </div>
 
-                <!-- Socials -->
-                <div>
-                    <h3>Socials</h3>
-                    <a href="#" class="pa-link-arrow">Instagram <i class="fas fa-arrow-right pa-link-arrow"></i></a>
-                    <a href="#" class="pa-link-arrow">Facebook <i class="fas fa-arrow-right pa-link-arrow"></i></a>
-                    <a href="#" class="pa-link-arrow">LinkedIn <i class="fas fa-arrow-right pa-link-arrow"></i></a>
+                    <!-- Socials -->
+                    <div>
+                        <h3>Socials</h3>
+                        <a href="#" class="pa-link-arrow">Instagram <i class="fas fa-arrow-right pa-link-arrow"></i></a>
+                        <a href="#" class="pa-link-arrow">Facebook <i class="fas fa-arrow-right pa-link-arrow"></i></a>
+                        <a href="#" class="pa-link-arrow">LinkedIn <i class="fas fa-arrow-right pa-link-arrow"></i></a>
+                    </div>
                 </div>
             </div>
 
