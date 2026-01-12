@@ -527,6 +527,58 @@
             background: #ff1744;
         }
 
+        .pa-feature-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .pa-feature-box:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .pa-card-vision {
+            background: linear-gradient(135deg, #ffffff 0%, #f1f8e9 100%);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(46, 125, 50, 0.1);
+            height: 100%;
+            transition: var(--transition);
+        }
+
+        .pa-card-vision:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pa-card-values {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+
+        .pa-value-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .pa-value-item:hover {
+            background: #f9f9f9;
+            transform: translateX(5px);
+        }
+
         .pa-footer-bottom {
             margin-top: 60px;
             padding-top: 30px;
@@ -767,64 +819,93 @@
             </div>
 
             <div class="pa-about-text">
-                <p class="mb-1">PureAmrut Foods is a trusted name in pure, clean, and hygienically processed food
+                <p class="mb-2" style="font-size: 18px; color: #555; line-height: 1.8;">PureAmrut Foods is a trusted
+                    name in pure, clean, and hygienically processed food
                     products. We specialize in <strong>Chakki Atta, Pulses, Grains, and Spices</strong>—crafted using
                     advanced technology, premium raw materials, and strict quality standards at every step.</p>
 
-                <p class="mb-2"
-                    style="background: #e8f5e9; padding: 20px; border-radius: 8px; border-left: 4px ;">
-                    <strong><i class="fas fa-female"></i> Women Empowerment</strong><br>
-                    What makes us truly unique is that PureAmrut Foods is led by visionary women directors, whose
-                    dedication, discipline, and commitment to quality shape the brand’s core philosophy. Their
-                    leadership drives innovation, transparency, and excellence across every part of our operations—from
-                    sourcing to processing, packaging, and delivery.
-                </p>
-
-                <p>PureAmrut Foods proudly stands as a Women-Empowered and Women-Driven Brand, creating opportunities
-                    for Women, uplifting communities, and inspiring a new standard of purity in the food industry.</p>
-
-                <h4 style="margin-top: 30px;">Our Goal</h4>
-                <p>To deliver purity, nutrition, and honest quality to every household—made with care, purpose, and the
-                    strength of women leadership.</p>
-            </div>
-            <!-- Vision & Mission -->
-            <div class="pa-grid pa-grid-2" style="margin-top: 60px;">
-                <div style="background: #e8f5e9; padding: 40px; border-radius: 16px;">
-                    <h3 class="mb-1">Vision & Mission</h3>
-                    <p class="mb-1">To become an internationally respected and globally recognized food brand driven by
-                        women leadership, innovation, and ethical values.</p>
-                    <p class="mb-1">We aim to set new benchmarks in purity, quality, and customer satisfaction—while
-                        creating an ecosystem where women have the power, voice, and platform to shape the future of the
-                        food industry.</p>
-                    <p><strong>Our vision is to make PureAmrut Foods a symbol of purity, progress, and women empowerment
-                            for generations to come.</strong></p>
+                <div class="pa-feature-box">
+                    <h4 style=" margin-bottom: 10px; display: flex; align-items: center;">
+                        <i class="fas fa-female"
+                            style="font-size: 24px; margin-right: 15px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%;"></i>
+                        Women Empowerment
+                    </h4>
+                    <p style="font-size: 16px; color: #4a4a4a;">
+                        What makes us truly unique is that PureAmrut Foods is led by visionary women directors. Their
+                        dedication, discipline, and commitment to quality shape the brand’s core philosophy. PureAmrut
+                        Foods proudly stands as a Women-Empowered Brand, creating opportunities
+                        for women and inspiring a new standard of purity.
+                    </p>
                 </div>
 
-                <div style="padding: 20px;">
-                    <h3>Core Values</h3>
-                    <ul class="pa-list-check" style="margin-top: 20px;">
-                        <li><i class="fas fa-check" style="color: var(--primary); margin-right: 12px;"></i>
-                            <span><strong>Purity:</strong> Clean, natural & chemical-free food products</span>
-                        </li>
-                        <li><i class="fas fa-check" style="color: var(--primary); margin-right: 12px;"></i>
+                <div style="text-align: center; margin-top: 40px;">
+                    <h4 style="margin-bottom: 15px; font-weight: 600; font-size: 22px;">Our Goal</h4>
+                    <p
+                        style="font-size: 18px; max-width: 700px; margin: 0 auto; color: var(--primary-dark); font-style: italic;">
+                        "To deliver purity, nutrition, and honest quality to every household—made with care, purpose,
+                        and the strength of women leadership."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Vision & Mission -->
+            <div class="pa-grid pa-grid-2" style="margin-top: 60px; gap: 50px;">
+                <div class="pa-card-vision">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <i class="fas fa-eye" style="font-size: 40px; color: var(--primary); margin-bottom: 15px;"></i>
+                        <h3 class="mb-1" style="font-size: 28px;">Vision & Mission</h3>
+                    </div>
+
+                    <p class="mb-1">To become an internationally respected and globally recognized food brand driven by
+                        women leadership.</p>
+                    <p class="mb-1">We aim to set new benchmarks in purity, quality, and customer satisfaction—while
+                        creating an ecosystem where women have the power to shape the future of the food industry.</p>
+                    <hr style="border: 0; border-top: 1px solid rgba(0,0,0,0.1); margin: 20px 0;">
+                    <p style="font-weight: 500; color: var(--primary-dark);">
+                        Our vision is to make PureAmrut Foods a symbol of purity, progress, and women empowerment
+                        for generations to come.
+                    </p>
+                </div>
+
+                <div class="pa-card-values">
+                    <h3 style="margin-bottom: 30px; text-align: center; font-size: 28px;">Core Values</h3>
+                    <div style="display: grid; gap: 10px;">
+                        <div class="pa-value-item">
+                            <i class="fas fa-check-circle"
+                                style="color: var(--primary); font-size: 20px; margin-right: 15px;"></i>
+                            <span><strong>Purity:</strong> Clean, natural & chemical-free</span>
+                        </div>
+                        <div class="pa-value-item">
+                            <i class="fas fa-hand-holding-heart"
+                                style="color: var(--primary); font-size: 20px; margin-right: 15px;"></i>
                             <span><strong>Integrity:</strong> Transparent practices & honest pricing</span>
-                        </li>
-                        <li><i class="fas fa-check" style="color: var(--primary); margin-right: 12px;"></i>
+                        </div>
+                        <div class="pa-value-item">
+                            <i class="fas fa-award"
+                                style="color: var(--primary); font-size: 20px; margin-right: 15px;"></i>
                             <span><strong>Quality:</strong> Strict quality checks at every stage</span>
-                        </li>
-                        <li><i class="fas fa-check" style="color: var(--primary); margin-right: 12px;"></i>
-                            <span><strong>Innovation:</strong> Modern automated machinery & smart packaging</span>
-                        </li>
-                        <li><i class="fas fa-check" style="color: var(--primary); margin-right: 12px;"></i>
-                            <span><strong>Commitment:</strong> On-time supply & complete customer satisfaction</span>
-                        </li>
-                        <li><i class="fas fa-check" style="color: var(--primary); margin-right: 12px;"></i>
-                            <span><strong>Hygiene:</strong> Highest standards of cleanliness & safety</span>
-                        </li>
-                        <li><i class="fas fa-check" style="color: var(--primary); margin-right: 12px;"></i>
-                            <span><strong>Women Empowerment:</strong> 98% of women employees</span>
-                        </li>
-                    </ul>
+                        </div>
+                        <div class="pa-value-item">
+                            <i class="fas fa-lightbulb"
+                                style="color: var(--primary); font-size: 20px; margin-right: 15px;"></i>
+                            <span><strong>Innovation:</strong> Modern automated machinery</span>
+                        </div>
+                        <div class="pa-value-item">
+                            <i class="fas fa-users"
+                                style="color: var(--primary); font-size: 20px; margin-right: 15px;"></i>
+                            <span><strong>Commitment:</strong> Complete customer satisfaction</span>
+                        </div>
+                        <div class="pa-value-item">
+                            <i class="fas fa-pump-medical"
+                                style="color: var(--primary); font-size: 20px; margin-right: 15px;"></i>
+                            <span><strong>Hygiene:</strong> Highest standards of safety</span>
+                        </div>
+                        <div class="pa-value-item">
+                            <i class="fas fa-female"
+                                style="color: var(--primary); font-size: 20px; margin-right: 15px;"></i>
+                            <span><strong>Empowerment:</strong> 98% of women employees</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1072,21 +1153,25 @@
             <div class="pa-grid pa-grid-2">
                 <div>
                     <h3>Custom Packaging Options</h3>
-                    <ul class="pa-list-check" style="margin-bottom: 30px; display: block;">
-                        <li><i class="fas fa-box" style="color: var(--primary); margin-right: 10px;"></i> <span>500g,
+                    <ul class="pa-list-check" style="margin-bottom: 30px; margin-top: 20px; display: block;">
+                        <li style="margin-bottom: 15px;"><i class="fas fa-box"
+                                style="color: var(--primary); margin-right: 10px;"></i> <span>500g,
                                 1kg (Normal & Vacuum Packed)</span></li>
-                        <li><i class="fas fa-box" style="color: var(--primary); margin-right: 10px;"></i> <span>2kg,
+                        <li style="margin-bottom: 15px;"><i class="fas fa-box"
+                                style="color: var(--primary); margin-right: 10px;"></i> <span>2kg,
                                 5kg, 30kg Bags</span></li>
-                        <li><i class="fas fa-layer-group" style="color: var(--primary); margin-right: 10px;"></i>
+                        <li style="margin-bottom: 15px;"><i class="fas fa-layer-group"
+                                style="color: var(--primary); margin-right: 10px;"></i>
                             <span>Printed, plain, laminated pouches, PP bags</span>
                         </li>
-                        <li><i class="fas fa-paint-brush" style="color: var(--primary); margin-right: 10px;"></i>
+                        <li style="margin-bottom: 15px;"><i class="fas fa-paint-brush"
+                                style="color: var(--primary); margin-right: 10px;"></i>
                             <span>Support in logo & packaging design</span>
                         </li>
                     </ul>
 
-                    <h3>Export-Quality Assurance</h3>
-                    <div class="pa-grid pa-grid-2" style="gap: 10px;">
+                    <h3 class="mt-2">Export-Quality Assurance</h3>
+                    <div class="pa-grid pa-grid-2" style="gap: 10px; margin-top: 20px;">
                         <div style="background: white; padding: 10px; border-radius: 4px; font-size: 14px;"><i
                                 class="fas fa-check"></i> World-class hygiene</div>
                         <div style="background: white; padding: 10px; border-radius: 4px; font-size: 14px;"><i
@@ -1097,7 +1182,7 @@
                 </div>
 
                 <div>
-                    <h3>Contract Manufacturing Process</h3>
+                    <h3 style="margin-bottom:20px; padding-bottom: 20px;">Contract Manufacturing Process</h3>
                     <div class="process-step">
                         <div class="process-number">1</div>
                         <div><strong>Requirement Discussion:</strong> samples & selection</div>
