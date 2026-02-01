@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: yellow;
+    }
+</style>
+
+<body>
+    <form>
+        Name: <input type="text" name="name" id="name" required>
+        Email: <input type="email" name="email" id="email" required>
+        Password: <input type="password" name="password" id="password" required>
+        Gender:<input type="text" name="gender" id="gender" required>
+        <input type="submit" onclick="callme()" value="Submit">
+    </form>
+</body>
+<script>
+    function callme() {
+        event.preventDefault()
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var gender = document.getElementById("gender").value;
+        console.log("Form Data:", {
+            name: name,
+            email: email,
+            password: password,
+            gender: gender
+        });
+    }
+</script>
+
+</html>
