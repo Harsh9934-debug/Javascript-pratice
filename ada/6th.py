@@ -1,33 +1,10 @@
-def merge_sort(arr):
-    if len(arr) > 1:
-        mid = len(arr) // 2
-        left_half = arr[:mid]
-        right_half = arr[mid:]
+def merge_sort(a):
+    if len(a) < 2: return a
+    m = len(a) // 2
+    l, r, i, j, res = merge_sort(a[:m]), merge_sort(a[m:]), 0, 0, []
+    while i < len(l) and j < len(r):
+        if l[i] < r[j]: res.append(l[i]); i += 1
+        else: res.append(r[j]); j += 1
+    return res + l[i:] + r[j:]
 
-        merge_sort(left_half)
-        merge_sort(right_half)
-
-        i = j = k = 0
-
-        while i < len(left_half) and j < len(right_half):
-            if left_half[i] < right_half[j]:
-                arr[k] = left_half[i]
-                i += 1
-            else:
-                arr[k] = right_half[j]
-                j += 1
-            k += 1
-
-        while i < len(left_half):
-            arr[k] = left_half[i]
-            i += 1
-            k += 1
-
-        while j < len(right_half):
-            arr[k] = right_half[j]
-            j += 1
-            k += 1
-    return arr
-elements = list(map(int, input("Enter elements with the spacing: ").split()))
-sorted_elements = merge_sort(elements)
-print("Sorted elements are :", sorted_elements)
+print("Sorted:", *merge_sort(list(map(int, input("Enter numbers space-separated: ").split()))))
