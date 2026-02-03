@@ -9,4 +9,4 @@ def toh(n, source, destination, auxiliary):
     toh(n-1, auxiliary, destination, source)
     
 n=int(input("Enter the number of disks: "))
-toh(n,'A','B','C')
+toh(n,'A','C','B')
