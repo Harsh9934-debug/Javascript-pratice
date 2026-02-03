@@ -1,12 +1,13 @@
-#write a python program to implement the merge sort
+#write a python program to implement the quick sort
 
-def merge_sort(arr):
-    if len(arr) < 2: return arr
-    m = len(arr) // 2
-    l, r, i, j, res = merge_sort(arr[:m]), merge_sort(arr[m:]), 0, 0, []
-    while i < len(l) and j < len(r):
-        if l[i] < r[j]: res.append(l[i]); i += 1
-        else: res.append(r[j]); j += 1
-    return res + l[i:] + r[j:]
-arr = list(map(int, input("Enter elements with the spacing: ").split()))
-print("Sorted array:", merge_sort(arr))
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    mid  = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return quick_sort(left) + mid + quick_sort(right)
+
+arr = list(map(int, input("Enter elements with spacing: ").split()))
+print("Sorted array:", quick_sort(arr))
