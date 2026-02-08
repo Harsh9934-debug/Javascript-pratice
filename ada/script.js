@@ -32,35 +32,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // AUTO SLIDER (Headers from User)
     const slides = [
-        { title: "PureAmrut Foods", subtitle: "Purity You Can Taste. Quality You Can Trust." },
-        { title: "Empowered by Women", subtitle: "Loved by Families." },
-        { title: "Premium Whole Grains", subtitle: "Direct from Verified Farmers." },
-        { title: "Vacuum Packed Pulses", subtitle: "For Long-Lasting Freshness." },
-        { title: "Hygienic Processing", subtitle: "Automated Cleaning & Sorting." }
+        "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?q=80&w=1600&auto=format&fit=crop", // Wheat field
+        "https://images.unsplash.com/photo-1599579178082-a9b096a6cdfc?q=80&w=1600&auto=format&fit=crop", // Pulses
+        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1600&auto=format&fit=crop", // Spices
+        "https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1600&auto=format&fit=crop", // Women/Field
+        "https://images.unsplash.com/photo-1595855799342-0ffa36592231?q=80&w=1600&auto=format&fit=crop", // Factory/Process
+        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600&auto=format&fit=crop", // Food/Family
+        "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1600&auto=format&fit=crop"  // Nature
     ];
 
-    const sliderContainer = document.getElementById('heroSlider');
+    const sliderContainer = document.getElementById('heroBgSlider');
     if (sliderContainer) {
         let currentSlide = 0;
 
         // Init slides
-        slides.forEach((slide, index) => {
+        slides.forEach((imgUrl, index) => {
             const el = document.createElement('div');
-            el.className = `pa-slide ${index === 0 ? 'active' : ''}`;
-            el.innerHTML = `
-        <h2 style="color:var(--primary); margin-bottom:10px;">${slide.title}</h2>
-        <p style="color:#666;">${slide.subtitle}</p>
-    `;
+            el.className = `pa-hero-bg-slide ${index === 0 ? 'active' : ''}`;
+            el.style.backgroundImage = `url('${imgUrl}')`;
             sliderContainer.appendChild(el);
         });
 
         // Rotate
         setInterval(() => {
-            const elSlides = sliderContainer.querySelectorAll('.pa-slide');
+            const elSlides = sliderContainer.querySelectorAll('.pa-hero-bg-slide');
             elSlides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % elSlides.length;
             elSlides[currentSlide].classList.add('active');
-        }, 4000);
+        }, 5000);
     }
 
     // SCROLL REVEAL (Simple Intersection Observer)

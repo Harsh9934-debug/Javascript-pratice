@@ -154,25 +154,62 @@ ul {
 /* HERO SECTION */
 .pa-hero {
     position: relative;
-    background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);
-    padding: 120px 0 80px;
+    /* background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);  Removed for image slider */
+    padding: 150px 0 100px;
     overflow: hidden;
     text-align: center;
-    min-height: 80vh;
+    min-height: 100vh;
+    /* Full screen height */
     display: flex;
     align-items: center;
+    color: var(--dark);
 }
 
-.pa-hero::before {
+.pa-hero-bg-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.pa-hero-bg-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.pa-hero-bg-slide::after {
     content: '';
     position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 400px;
-    height: 400px;
-    background: rgba(46, 125, 50, 0.05);
-    border-radius: 50%;
-    filter: blur(60px);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    /* White overlay to keep text readable */
+}
+
+.pa-hero-bg-slide.active {
+    opacity: 1;
+    animation: zoomSlow 20s infinite alternate;
+}
+
+@keyframes zoomSlow {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
 }
 
 .pa-hero-content {
@@ -180,31 +217,18 @@ ul {
     z-index: 1;
     max-width: 800px;
     margin: 0 auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
 }
 
 .pa-hero h1 {
-    font-size: 56px;
-    margin-bottom: 20px;
+    font-size: 48px;
+    margin-bottom: 15px;
     color: var(--primary-dark);
-    animation: fadeUp 1s ease-out;
-}
-
-.pa-hero h3 {
-    font-size: 24px;
-    font-weight: 400;
-    color: var(--text-body);
-    margin-bottom: 30px;
-    animation: fadeUp 1s ease-out 0.2s backwards;
-}
-
-.pa-hero p.tagline {
-    font-weight: 600;
-    color: var(--primary);
-    letter-spacing: 1px;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    font-size: 14px;
-    animation: fadeUp 1s ease-out 0.4s backwards;
+    line-height: 1.1;
 }
 
 /* BUTTONS */
