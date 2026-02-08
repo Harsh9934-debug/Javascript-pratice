@@ -17,7 +17,17 @@
             <div class="pa-nav-links" id="navLinks">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
-                <a href="products.html">Products</a>
+                <div class="pa-dropdown">
+                    <a href="products.html">Products <i class="fas fa-chevron-down"
+                            style="font-size: 12px; margin-left: 4px;"></i></a>
+                    <div class="pa-dropdown-content">
+                        <a href="products-wholegrain.html" class="active">Whole Grains</a>
+                        <a href="products-pulses.html">Pulses (Dals)</a>
+                        <a href="products-atta.html">Atta (Flour)</a>
+                        <a href="products-besan.html">Besan</a>
+                        <a href="products-masala.html">Masala</a>
+                    </div>
+                </div>
                 <a href="facility.html">Facility</a>
                 <a href="gallery.html">Gallery</a>
                 <a href="privatelabel.html">Private Label</a>
@@ -30,45 +40,55 @@
         </div>
     </nav>
 
+    <!-- PRODUCT HERO -->
+    <section class="pa-product-hero"
+        style="background-image: url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?q=80&w=1920&auto=format&fit=crop');">
+        <div class="pa-product-hero-content">
+            <span class="pa-category-badge" style="background-color: #fbc02d;">Farm Fresh</span>
+            <h1>Whole Grains</h1>
+        </div>
+    </section>
+
     <!-- PRODUCT DETAIL -->
-    <section class="pa-section">
+    <section class="pa-section" style="padding-top: 60px;">
         <div class="pa-container">
-            <div class="section-header">
-                <h2>Whole Grains</h2>
-                <hr>
-                <a href="products.html" style="font-size: 14px; margin-top: 10px; display: inline-block;">&larr; Back to
-                    Products</a>
+            <div style="margin-bottom: 30px;">
+                <a href="products.html"
+                    style="font-size: 14px; display: inline-flex; align-items: center; gap: 5px; color: #666;">
+                    <i class="fas fa-arrow-left"></i> Back to Products
+                </a>
             </div>
 
             <div class="pa-card pa-product-detail">
-                <div style="text-align:center; margin-bottom:20px;">
-                    <img src="https://unsplash.com/photos/w-iVGVdZvt4/download?force=true&w=800" alt="Whole Grains"
-                        style="max-width:100%; border-radius:8px; height: 300px; object-fit: cover;">
-                </div>
+                <!-- Image Removed (Moved to Hero) -->
                 <h3><i class="fas fa-seedling" style="color:var(--primary); margin-right:10px;"></i> Whole Grains</h3>
                 <p>Premium-quality whole grains directly purchased from farmers.</p>
 
                 <div class="pa-grid pa-grid-2">
-                    <div>
-                        <h4 style="margin-bottom:10px;">Sortex Cleaned Whole Wheat</h4>
-                        <p><strong>Varieties:</strong> Lokwan & Tukda</p>
-                        <div>
-                            <span class="pa-pack-size">5kg Vacuum Packed</span>
-                            <span class="pa-pack-size">30kg Bulk Packing</span>
-                        </div>
+                    <div style="background: #fcfcfc; padding: 25px; border-radius: 8px; border: 1px solid #eee;">
+                        <h4 style="margin-bottom:10px; color: var(--primary-dark);">Sortex Cleaned Whole Wheat Grain
+                        </h4>
+                        <p style="margin-bottom: 5px;"><strong>Variety:</strong> Lokwan & Tukda</p>
+                        <p style="margin-bottom: 15px;"><strong>Packing:</strong></p>
+                        <ul style="list-style: disc; margin-left: 20px; margin-bottom: 20px; color: #555;">
+                            <li>5kg Vacuum Packed</li>
+                            <li>30kg Bulk Packing</li>
+                        </ul>
+                        <a href="contact.html" class="pa-btn" style="font-size: 14px; padding: 8px 20px;">Enquire
+                            Now</a>
                     </div>
-                    <div>
-                        <h4 style="margin-bottom:10px;">Sortex Cleaned Sharbati Wheat</h4>
-                        <p><strong>Variety:</strong> Sharbati</p>
-                        <div>
-                            <span class="pa-pack-size">5kg Vacuum Packed</span>
-                            <span class="pa-pack-size">30kg Bulk Packing</span>
-                        </div>
-                    </div>
-                </div>
 
-                <div style="margin-top: 30px; text-align: center;">
-                    <a href="contact.html" class="pa-btn">Enquire Now</a>
+                    <div style="background: #fcfcfc; padding: 25px; border-radius: 8px; border: 1px solid #eee;">
+                        <h4 style="margin-bottom:10px; color: var(--primary-dark);">Sortex Cleaned Sharbati Wheat</h4>
+                        <p style="margin-bottom: 5px;"><strong>Variety:</strong> Sharbati</p>
+                        <p style="margin-bottom: 15px;"><strong>Packing:</strong></p>
+                        <ul style="list-style: disc; margin-left: 20px; margin-bottom: 20px; color: #555;">
+                            <li>5kg Vacuum Packed</li>
+                            <li>30kg Bulk Packing</li>
+                        </ul>
+                        <a href="contact.html" class="pa-btn" style="font-size: 14px; padding: 8px 20px;">Enquire
+                            Now</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -98,6 +118,22 @@
                         <a href="#" class="pa-link-arrow">Facebook <i class="fas fa-arrow-right pa-link-arrow"></i></a>
                         <a href="#" class="pa-link-arrow">LinkedIn <i class="fas fa-arrow-right pa-link-arrow"></i></a>
                     </div>
+                </div>
+                <!-- Contact Details -->
+                <div style="margin-top: 20px;">
+                    <h3>Get in Touch</h3>
+                    <p
+                        style="margin-bottom:10px; font-size:14px; color:#666; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-phone-alt" style="color:var(--primary);"></i> +91 98765 43210
+                    </p>
+                    <p
+                        style="margin-bottom:10px; font-size:14px; color:#666; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-envelope" style="color:var(--primary);"></i> info@pureamrut.com
+                    </p>
+                    <p
+                        style="margin-bottom:10px; font-size:14px; color:#666; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Gujarat, India
+                    </p>
                 </div>
             </div>
             <div class="pa-footer-bottom">

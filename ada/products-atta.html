@@ -17,7 +17,17 @@
             <div class="pa-nav-links" id="navLinks">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
-                <a href="products.html">Products</a>
+                <div class="pa-dropdown">
+                    <a href="products.html">Products <i class="fas fa-chevron-down"
+                            style="font-size: 12px; margin-left: 4px;"></i></a>
+                    <div class="pa-dropdown-content">
+                        <a href="products-wholegrain.html">Whole Grains</a>
+                        <a href="products-pulses.html">Pulses (Dals)</a>
+                        <a href="products-atta.html" class="active">Atta (Flour)</a>
+                        <a href="products-besan.html">Besan</a>
+                        <a href="products-masala.html">Masala</a>
+                    </div>
+                </div>
                 <a href="facility.html">Facility</a>
                 <a href="gallery.html">Gallery</a>
                 <a href="privatelabel.html">Private Label</a>
@@ -30,44 +40,62 @@
         </div>
     </nav>
 
+    <!-- PRODUCT HERO -->
+    <section class="pa-product-hero"
+        style="background-image: url('https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?q=80&w=1920&auto=format&fit=crop');">
+        <div class="pa-product-hero-content">
+            <span class="pa-category-badge">Premium Grains</span>
+            <h1>Whole Wheat Atta</h1>
+        </div>
+    </section>
+
     <!-- PRODUCT DETAIL -->
-    <section class="pa-section">
+    <section class="pa-section" style="padding-top: 60px;">
         <div class="pa-container">
-            <div class="section-header">
-                <h2>Atta</h2>
-                <hr>
-                <a href="products.html" style="font-size: 14px; margin-top: 10px; display: inline-block;">&larr; Back to
-                    Products</a>
+            <div style="margin-bottom: 30px;">
+                <a href="products.html"
+                    style="font-size: 14px; display: inline-flex; align-items: center; gap: 5px; color: #666;">
+                    <i class="fas fa-arrow-left"></i> Back to Products
+                </a>
             </div>
 
             <div class="pa-card pa-product-detail">
-                <div style="text-align:center; margin-bottom:20px;">
-                    <img src="https://imgs.search.brave.com/4tK4eri-jPlBOr-VLAG8ZWYWtGpn4yTzAX1CmeHwFVs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mcnVn/aXZvcmUtYnVja2V0/LnMzLmFtYXpvbmF3/cy5jb20vbWVkaWEv/cGFja2FnZS9pbWdf/b25lLzIwMjEtMDct/MTYvQWFzaGlydmFk/ZF9TZWxlY3RfQXR0/YV8xMGtnLmpwZw"
-                        alt="Atta" style="max-width:100%; border-radius:8px; height: 300px; object-fit: cover;">
-                </div>
-                <h3><i class="fas fa-bread-slice" style="color:var(--primary); margin-right:10px;"></i> Atta</h3>
-                <p>Our premium Atta range includes Whole Wheat Atta for soft, fluffy rotis, and Multigrain Atta for
-                    complete daily nutrition—offering unbeatable freshness and industry-leading quality.</p>
+                <!-- Image Removed (Moved to Hero) -->
+                <h3><i class="fas fa-bread-slice" style="color:var(--primary); margin-right:10px;"></i> Atta (Flour)
+                </h3>
+                <p>Our premium Atta range includes Whole Wheat Atta for soft, fluffy rotis, Multigrain Atta for complete
+                    daily nutrition, and Besan Atta made from the finest chana dal—offering unbeatable freshness and
+                    industry-leading quality.</p>
 
                 <div class="pa-grid pa-grid-2">
-                    <div style="background: #fcfcfc; padding: 20px; border-radius: 8px;">
-                        <h4>Whole Wheat Atta</h4>
-                        <p><strong>Benefits:</strong> Soft rotis, high nutrition, longer freshness.</p>
-                        <div style="margin-bottom: 15px;">
-                            <span class="pa-pack-size">5kg Retail</span>
-                            <span class="pa-pack-size">30kg Regular</span>
-                            <span class="pa-pack-size">30kg Premium</span>
-                        </div>
-                        <a href="contact.html" class="pa-btn" style="font-size: 13px; padding: 8px 16px;">Enquire
+                    <!-- Whole Wheat Atta -->
+                    <div style="background: #fcfcfc; padding: 25px; border-radius: 8px; border: 1px solid #eee;">
+                        <h4 style="margin-bottom:5px; color: var(--primary-dark);">Whole Wheat Atta</h4>
+                        <p style="margin-bottom:10px; font-style: italic; color: #666;">Premium Whole Wheat Atta</p>
+                        <p style="margin-bottom: 5px;"><strong>Benefits:</strong> Soft rotis, high nutrition, longer
+                            freshness.</p>
+                        <p style="margin-bottom: 15px;"><strong>Packing Size:</strong></p>
+                        <ul style="list-style: disc; margin-left: 20px; margin-bottom: 20px; color: #555;">
+                            <li>Retail: 5 Kg Packing</li>
+                            <li>Bulk: 30 Kg Regular Packing</li>
+                            <li>Bulk: 30 Kg Premium Packing</li>
+                        </ul>
+                        <a href="contact.html" class="pa-btn" style="font-size: 14px; padding: 8px 20px;">Enquire
                             Now</a>
                     </div>
-                    <div style="background: #fcfcfc; padding: 20px; border-radius: 8px;">
-                        <h4>Multigrain Atta</h4>
-                        <p><strong>Benefits:</strong> High fibre, healthy digestion, complete nutrition.</p>
-                        <div style="margin-bottom: 15px;">
-                            <span class="pa-pack-size">2kg Retail</span>
-                        </div>
-                        <a href="contact.html" class="pa-btn" style="font-size: 13px; padding: 8px 16px;">Enquire
+
+                    <!-- Multigrain Atta -->
+                    <div style="background: #fcfcfc; padding: 25px; border-radius: 8px; border: 1px solid #eee;">
+                        <h4 style="margin-bottom:5px; color: var(--primary-dark);">Multigrain Atta</h4>
+                        <p style="margin-bottom:10px; font-style: italic; color: #666;">A nutritious blend of wheat,
+                            millets & grains.</p>
+                        <p style="margin-bottom: 5px;"><strong>Benefits:</strong> High fibre, healthy digestion,
+                            complete nutrition.</p>
+                        <p style="margin-bottom: 15px;"><strong>Packing Size:</strong></p>
+                        <ul style="list-style: disc; margin-left: 20px; margin-bottom: 20px; color: #555;">
+                            <li>Retail: 2 Kg Packing</li>
+                        </ul>
+                        <a href="contact.html" class="pa-btn" style="font-size: 14px; padding: 8px 20px;">Enquire
                             Now</a>
                     </div>
                 </div>
@@ -99,6 +127,22 @@
                         <a href="#" class="pa-link-arrow">Facebook <i class="fas fa-arrow-right pa-link-arrow"></i></a>
                         <a href="#" class="pa-link-arrow">LinkedIn <i class="fas fa-arrow-right pa-link-arrow"></i></a>
                     </div>
+                </div>
+                <!-- Contact Details -->
+                <div style="margin-top: 20px;">
+                    <h3>Get in Touch</h3>
+                    <p
+                        style="margin-bottom:10px; font-size:14px; color:#666; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-phone-alt" style="color:var(--primary);"></i> +91 98765 43210
+                    </p>
+                    <p
+                        style="margin-bottom:10px; font-size:14px; color:#666; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-envelope" style="color:var(--primary);"></i> info@pureamrut.com
+                    </p>
+                    <p
+                        style="margin-bottom:10px; font-size:14px; color:#666; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-map-marker-alt" style="color:var(--primary);"></i> Gujarat, India
+                    </p>
                 </div>
             </div>
             <div class="pa-footer-bottom">

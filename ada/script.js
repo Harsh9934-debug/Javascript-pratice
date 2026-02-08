@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // MOBILE MENU
+    // Mobile Menu Toggle
     const mobileToggle = document.getElementById('mobileToggle');
     const navLinks = document.getElementById('navLinks');
     const links = navLinks.querySelectorAll('a');
