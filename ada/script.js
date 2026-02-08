@@ -32,13 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // AUTO SLIDER (Headers from User)
     const slides = [
-        "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?q=80&w=1600&auto=format&fit=crop", // Wheat field
-        "https://images.unsplash.com/photo-1599579178082-a9b096a6cdfc?q=80&w=1600&auto=format&fit=crop", // Pulses
-        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1600&auto=format&fit=crop", // Spices
-        "https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1600&auto=format&fit=crop", // Women/Field
-        "https://images.unsplash.com/photo-1595855799342-0ffa36592231?q=80&w=1600&auto=format&fit=crop", // Factory/Process
-        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600&auto=format&fit=crop", // Food/Family
-        "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1600&auto=format&fit=crop"  // Nature
+        "assets/images/wheat_harvest_farm.png",
+        "assets/images/pulses_variety_premium.png",
+        "assets/images/masala_spices_premium.png",
+        "assets/images/about_our_story.png",
+        "assets/images/grain_processing_factory.png",
+        "assets/images/hero_slider_family_meal.png"
     ];
 
     const sliderContainer = document.getElementById('heroBgSlider');
