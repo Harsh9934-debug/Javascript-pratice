@@ -810,6 +810,10 @@ ul.pa-list-check li i {
     background: #fcfcfc;
 }
 
+.pa-features-section .pa-grid {
+    align-items: stretch;
+}
+
 .pa-feature-item {
     text-align: center;
     padding: 30px 20px;
@@ -818,6 +822,10 @@ ul.pa-list-check li i {
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     border: 1px solid #eee;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .pa-feature-item:hover {
