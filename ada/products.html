@@ -10,125 +10,148 @@
 </head>
 
 <body>
-    <!-- NAV (Copy from index.html) -->
+
+    <!-- NAV -->
     <nav class="pa-nav">
         <div class="pa-container pa-nav-inner">
-            <a href="index.html" class="pa-logo">
-                <img src="assets/images/logo.png" alt="PureAmrut Logo">
-            </a>
+            <a href="index.html" class="pa-logo"><i class="fas fa-leaf"></i> PureAmrut</a>
+
             <div class="pa-nav-links" id="navLinks">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
-                <a href="products.html" class="active">Products</a>
+                <a href="products.html">Products</a>
                 <a href="facility.html">Facility</a>
                 <a href="gallery.html">Gallery</a>
-                <a href="private-label.html">Private Label</a>
+                <a href="privatelabel.html">Private Label</a>
                 <a href="blog.html">Blog</a>
-                <a href="contact.html" class="pa-btn" style="padding: 10px 24px; font-size: 0.9rem;">Contact</a>
+                <a href="contact.html" class="pa-btn" style="padding: 8px 24px;">Contact</a>
             </div>
-            <div class="pa-mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></div>
+
+            <div class="pa-mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </nav>
 
-    <!-- HEADER -->
-    <header class="pa-section bg-light text-center" style="padding: 60px 0;">
-        <div class="pa-container">
-            <h1>Our Premium Range</h1>
-            <p>Discover the purity of nature in every pack.</p>
-        </div>
-    </header>
-
-    <!-- PRODUCTS GRID -->
+    <!-- PRODUCTS INDEX -->
     <section class="pa-section">
         <div class="pa-container">
-            <div class="pa-grid pa-grid-3">
+            <div class="section-header">
+                <h2>Our Premium Products</h2>
+                <hr>
+                <p style="margin-top: 15px;">Discover our range of pure, high-quality food products.</p>
+            </div>
 
-                <!-- Card: Whole Grains -->
-                <a href="products-grains.html" class="pa-card text-center" id="grains">
-                    <div class="product-img-wrapper"
-                        style="height: 250px; display: flex; align-items: center; justify-content: center; background: #fffcf5; border-radius: 12px; margin-bottom: 20px;">
-                        <img src="assets/images/hero-wheat.png" alt="Whole Grains"
-                            style="max-height: 100%; object-fit: cover; width: 100%; height: 100%; border-radius: 12px;">
+            <div class="pa-grid pa-grid-3">
+                <!-- Whole Grains -->
+                <a href="products-wholegrain.html" class="pa-card product-link-card"
+                    style="text-decoration: none; color: inherit; display: block;">
+                    <div style="text-align:center; margin-bottom:20px;">
+                        <img src="https://unsplash.com/photos/w-iVGVdZvt4/download?force=true&w=800" alt="Whole Grains"
+                            style="width:100%; border-radius:8px; height: 250px; object-fit: cover;">
                     </div>
                     <h3>Whole Grains</h3>
-                    <p>Premium Lokwan & Sharbati Wheat direct from farmers.</p>
-                    <span class="pa-btn btn-outline" style="font-size: 0.9rem; padding: 8px 24px;">View Details</span>
+                    <p>Premium-quality whole grains directly purchased from farmers. Sortex cleaned Wheat & more.</p>
+                    <span class="pa-btn" style="padding: 8px 20px; font-size: 13px;">View Details</span>
                 </a>
 
-                <!-- Card: Pulses -->
-                <a href="products-pulses.html" class="pa-card text-center" id="pulses">
-                    <div class="product-img-wrapper"
-                        style="height: 250px; display: flex; align-items: center; justify-content: center; background: #fffcf5; border-radius: 12px; margin-bottom: 20px;">
-                        <img src="assets/images/product-moong.png" alt="Pulses" style="max-height: 220px;">
+                <!-- Pulses -->
+                <a href="products-pulses.html" class="pa-card product-link-card"
+                    style="text-decoration: none; color: inherit; display: block;">
+                    <div style="text-align:center; margin-bottom:20px;">
+                        <img src="https://unsplash.com/photos/dl-Iqaw0vF8/download?force=true&w=800" alt="Pulses"
+                            style="width:100%; border-radius:8px; height: 250px; object-fit: cover;">
                     </div>
-                    <h3>Pulses & Dals</h3>
-                    <p>Moong, Urad, Chana, Masoor - Cleaned & Vacuum Packed.</p>
-                    <span class="pa-btn btn-outline" style="font-size: 0.9rem; padding: 8px 24px;">View Details</span>
+                    <h3>Pulses</h3>
+                    <p>Farm-fresh whole and split dals, meticulously cleaned and vacuum-packed.</p>
+                    <span class="pa-btn" style="padding: 8px 20px; font-size: 13px;">View Details</span>
                 </a>
 
-                <!-- Card: Atta -->
-                <a href="products-atta.html" class="pa-card text-center" id="atta">
-                    <div class="product-img-wrapper"
-                        style="height: 250px; display: flex; align-items: center; justify-content: center; background: #fffcf5; border-radius: 12px; margin-bottom: 20px;">
-                        <img src="assets/images/product-atta.png" alt="Atta" style="max-height: 220px;">
+                <!-- Atta -->
+                <a href="products-atta.html" class="pa-card product-link-card"
+                    style="text-decoration: none; color: inherit; display: block;">
+                    <div style="text-align:center; margin-bottom:20px;">
+                        <img src="https://imgs.search.brave.com/4tK4eri-jPlBOr-VLAG8ZWYWtGpn4yTzAX1CmeHwFVs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mcnVn/aXZvcmUtYnVja2V0/LnMzLmFtYXpvbmF3/cy5jb20vbWVkaWEv/cGFja2FnZS9pbWdf/b25lLzIwMjEtMDct/MTYvQWFzaGlydmFk/ZF9TZWxlY3RfQXR0/YV8xMGtnLmpwZw"
+                            alt="Atta" style="width:100%; border-radius:8px; height: 250px; object-fit: cover;">
                     </div>
-                    <h3>Premium Atta</h3>
-                    <p>Whole Wheat & Multigrain Atta for softest rotis.</p>
-                    <span class="pa-btn btn-outline" style="font-size: 0.9rem; padding: 8px 24px;">View Details</span>
+                    <h3>Atta</h3>
+                    <p>Premium Atta range including Whole Wheat Atta and Multigrain Atta for soft, fluffy rotis.</p>
+                    <span class="pa-btn" style="padding: 8px 20px; font-size: 13px;">View Details</span>
                 </a>
 
-                <!-- Card: Besan -->
-                <a href="products-besan.html" class="pa-card text-center" id="besan">
-                    <div class="product-img-wrapper"
-                        style="height: 250px; display: flex; align-items: center; justify-content: center; background: #fffcf5; border-radius: 12px; margin-bottom: 20px;">
-                        <img src="assets/images/product-besan.png" alt="Besan" style="max-height: 220px;">
+                <!-- Besan -->
+                <a href="products-besan.html" class="pa-card product-link-card"
+                    style="text-decoration: none; color: inherit; display: block;">
+                    <div style="text-align:center; margin-bottom:20px;">
+                        <img src="https://unsplash.com/photos/vdS-bfDTFqo/download?force=true&w=800" alt="Besan"
+                            style="width:100%; border-radius:8px; height: 250px; object-fit: cover;">
                     </div>
-                    <h3>Besan (Gram Flour)</h3>
-                    <p>100% Chana Dal Besan for perfect snacks & sweets.</p>
-                    <span class="pa-btn btn-outline" style="font-size: 0.9rem; padding: 8px 24px;">View Details</span>
+                    <h3>Besan</h3>
+                    <p>Freshly milled gram flour with natural aroma. Ideal for snacks and sweets.</p>
+                    <span class="pa-btn" style="padding: 8px 20px; font-size: 13px;">View Details</span>
                 </a>
 
-                <!-- Card: Masala -->
-                <a href="products-masala.html" class="pa-card text-center" id="masala">
-                    <div class="product-img-wrapper"
-                        style="height: 250px; display: flex; align-items: center; justify-content: center; background: #fffcf5; border-radius: 12px; margin-bottom: 20px;">
-                        <img src="assets/images/product-masala.png" alt="Masala" style="max-height: 220px;">
+                <!-- Masala (Placeholder as per request) -->
+                <a href="products-masala.html" class="pa-card product-link-card"
+                    style="text-decoration: none; color: inherit; display: block;">
+                    <div style="text-align:center; margin-bottom:20px;">
+                        <!-- Placeholder image for Masala -->
+                        <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=800&auto=format&fit=crop"
+                            alt="Masala" style="width:100%; border-radius:8px; height: 250px; object-fit: cover;">
                     </div>
-                    <h3>Spices & Masala</h3>
-                    <p>Authentic, aromatic spices to enrich your cooking.</p>
-                    <span class="pa-btn btn-outline" style="font-size: 0.9rem; padding: 8px 24px;">View Details</span>
+                    <h3>Masala</h3>
+                    <p>Authentic spices to add flavor and aroma to your dishes.</p>
+                    <span class="pa-btn" style="padding: 8px 20px; font-size: 13px;">View Details</span>
                 </a>
+
             </div>
         </div>
     </section>
 
-    <!-- FOOTER (Copy from index.html) -->
+    <!-- FOOTER -->
     <footer class="pa-footer">
-        <div class="pa-container">
-            <div class="pa-grid pa-grid-3">
+        <div class="pa-footer-watermark">PUREAMRUT</div>
+        <div class="pa-container" style="position: relative; z-index: 1;">
+            <div class="pa-grid pa-grid-4" style="align-items: start;">
+                <!-- Brand -->
                 <div>
-                    <div class="pa-footer-logo"><span style="color: var(--primary-light);">Pure</span>Amrut</div>
-                    <p>Delivering purity, nutrition, and honest quality.</p>
+                    <a href="index.html" class="pa-logo" style="display:block; margin-bottom:15px; font-size: 28px;"><i
+                            class="fas fa-leaf"></i> PureAmrut</a>
+                    <p style="font-size: 14px; color: #666; font-weight: 500;">Purity you can taste, Quality you can
+                        trust.</p>
                 </div>
-                <div>
-                    <h3>Quick Links</h3>
-                    <ul class="pa-footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="products.html">Our Products</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Contact Us</h3>
-                    <p>sales@pureamrut.com</p>
+
+                <!-- Company & Socials Group -->
+                <div style="display: flex; gap: 60px; flex-wrap: wrap;">
+                    <div>
+                        <h3>Company</h3>
+                        <a href="about.html">About Us</a>
+                        <a href="products.html">Products</a>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+
+                    <!-- Socials -->
+                    <div>
+                        <h3>Socials</h3>
+                        <a href="#" class="pa-link-arrow">Instagram <i class="fas fa-arrow-right pa-link-arrow"></i></a>
+                        <a href="#" class="pa-link-arrow">Facebook <i class="fas fa-arrow-right pa-link-arrow"></i></a>
+                        <a href="#" class="pa-link-arrow">LinkedIn <i class="fas fa-arrow-right pa-link-arrow"></i></a>
+                    </div>
                 </div>
             </div>
-            <div
-                style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 50px; padding-top: 20px; text-align: center; font-size: 0.9rem;">
-                &copy; 2024 PureAmrut Foods. All Rights Reserved.
+
+            <!-- Bottom -->
+            <div class="pa-footer-bottom">
+                <div>&copy; 2026 PureAmrut Foods. All Rights Reserved.</div>
+                <div style="display: flex; gap: 20px;">
+                    <a href="#" style="margin:0; color:#999;">Privacy Policy</a>
+                    <a href="#" style="margin:0; color:#999;">Terms & Conditions</a>
+                    <a href="#" style="margin:0; color:#999;">Cookie Settings</a>
+                </div>
             </div>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 
