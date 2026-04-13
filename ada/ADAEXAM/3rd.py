@@ -1,12 +1,7 @@
-#write a python program to implement the tower of hanoi using recursion 
+def toh(n, src, dst, aux):
+    if n == 0: return
+    toh(n - 1, src, aux, dst)
+    print(f"Move disk {n} from {src} to {dst}")
+    toh(n - 1, aux, dst, src)
 
-def toh(n, source, destination, auxiliary):
-    if n==1:
-        print("Move disk 1 from source",source,"to destination",destination)
-        return
-    toh(n-1, source, auxiliary, destination)
-    print("Move disk",n,"from source",source,"to destination",destination)
-    toh(n-1, auxiliary, destination, source)
-    
-n=int(input("Enter the number of disks: "))
-toh(n,'A','C','B')
+toh(int(input("Enter disks: ")), 'A', 'C', 'B')

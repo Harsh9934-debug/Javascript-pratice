@@ -1,13 +1,7 @@
-#write a python program to implement the quick sort
-
 def quick_sort(arr):
-    if len(arr) <= 1:
-        return arr
-    pivot = arr[len(arr) // 2]
-    left = [x for x in arr if x < pivot]
-    mid  = [x for x in arr if x == pivot]
-    right = [x for x in arr if x > pivot]
-    return quick_sort(left) + mid + quick_sort(right)
+    if len(arr) <= 1: return arr
+    p = arr[len(arr) // 2]
+    return quick_sort([x for x in arr if x < p]) + [x for x in arr if x == p] + quick_sort([x for x in arr if x > p])
 
-arr = list(map(int, input("Enter elements with spacing: ").split()))
-print("Sorted array:", quick_sort(arr))
+arr = list(map(int, input("Enter elements: ").split()))
+print("Sorted:", quick_sort(arr))
