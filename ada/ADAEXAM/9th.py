@@ -36,23 +36,3 @@ if __name__ == "__main__":
     print("\nPostorder traversal: ", end="")
     postorder(root)
     print()
-"""
-DETAILED WORKING OF THE ALGORITHM (Tree Traversals):
-
-Recursive Traversals operate strictly recursively focusing on Root, Left, and Right handling order:
-
-1. Inorder (Left, Root, Right):
-   - Goes deeply down the left branch entirely.
-   - Processes/prints the Current Root item.
-   - Goes deeply down the right branch.
-   - Generates naturally sorted outputs for Binary Search Trees!
-
-2. Preorder (Root, Left, Right):
-   - Immediately prints the Current Root item.
-   - Recursively dives left, then inherently dives right.
-   - Heavily utilized for cloning configurations physically.
-
-3. Postorder (Left, Right, Root):
-   - Penetrates all the way to the deepest left and deepest right children sequentially BEFORE processing the Root element itself.
-   - Highly useful for node deletion and physical memory free-up since it removes children before parents.
-"""
