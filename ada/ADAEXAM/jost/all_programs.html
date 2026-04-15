@@ -1,462 +1,137 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADA Exam Programs Reference</title>
+    <title>ADA_EXAM_PREP - Visual Studio Code</title>
     <style>
-        * { box-sizing: border-box; }
-        body { 
+        body, html {
+            margin: 0; padding: 0; width: 100vw; height: 100vh;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background-color: #1e1e1e; /* VS Code dark background */
-            color: #d4d4d4; /* Default VS Code text */
-            margin: 0; 
-            padding: 0; 
-            display: flex;
-            height: 100vh;
+            background-color: #1e1e1e; color: #cccccc; overflow: hidden; display: flex; flex-direction: column;
         }
-        /* Sidebar container */
-        .sidebar {
-            width: 300px;
-            background-color: #252526;
-            border-right: 1px solid #3c3c3c;
-            overflow-y: auto;
-            position: fixed;
-            height: 100vh;
-        }
-        .sidebar-header {
-            padding: 10px 20px;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #858585;
-        }
-        .explorer-item {
-            padding: 6px 20px;
-            cursor: pointer;
-            font-size: 13px;
-            display: flex;
-            align-items: center;
-        }
-        .explorer-item:hover {
-            background-color: #2a2d2e;
-            color: #ffffff;
-        }
-        .explorer-item b {
-            margin-right: 8px;
-            color: #519aba; /* Blue python icon mockup */
-        }
-        .explorer-item span {
-            color: #9cdcfe;
-            font-size: 11px;
-            margin-left: 8px;
-        }
-
-        /* Main Editor area */
-        .main-content {
-            margin-left: 300px;
-            flex-grow: 1;
-            padding-bottom: 50px;
-            overflow-y: auto;
-        }
+        .top-bar { height: 30px; background-color: #3c3c3c; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #cccccc; }
+        .main-container { display: flex; flex: 1; overflow: hidden; }
         
-        .editor-container {
-            margin: 40px auto;
-            width: 90%;
-            max-width: 1000px;
-            background-color: #1e1e1e;
-            border-radius: 5px;
-            border: 1px solid #3c3c3c;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            overflow: hidden;
-        }
+        .activity-bar { width: 50px; background-color: #333333; display: flex; flex-direction: column; align-items: center; padding-top: 15px; border-right: 1px solid #252526; }
+        .activity-icon { font-size: 20px; margin-bottom: 25px; opacity: 0.5; cursor: pointer; }
+        .activity-icon.active { opacity: 1; border-left: 2px solid white; padding-left: 2px; }
         
-        /* VS Code Top Tab */
-        .tabs {
-            display: flex;
-            background-color: #252526;
-            height: 35px;
-            overflow: hidden;
-            border-bottom: 1px solid #1e1e1e;
-        }
-        .tab-active {
-            background-color: #1e1e1e;
-            color: #ffffff;
-            border-top: 2px solid #007acc;
-            padding: 8px 15px;
-            font-size: 13px;
-            display: flex;
-            align-items: center;
-        }
-        .breadcrumbs {
-            padding: 5px 15px;
-            font-size: 13px;
-            color: #858585;
-            border-bottom: 1px solid #2d2d2d;
-            background-color: #1e1e1e;
-        }
-        .breadcrumbs span { color: #519aba; }
-
-        /* Actual Code */
-        pre { 
-            margin: 0;
-            padding: 20px; 
-            overflow-x: auto; 
-            font-family: 'Consolas', 'Courier New', Courier, monospace; 
-            font-size: 14px; 
-            line-height: 1.5; 
-            background-color: #1e1e1e;
-        }
-        code { font-family: inherit; }
+        .sidebar { width: 250px; background-color: #252526; border-right: 1px solid #1e1e1e; display: flex; flex-direction: column; }
+        .sidebar-header { padding: 10px 20px; font-size: 11px; text-transform: uppercase; color: #858585; display: flex; justify-content: space-between; }
+        .sidebar-list { overflow-y: auto; flex: 1; padding-bottom: 20px; }
+        .file-item { padding: 4px 20px; cursor: pointer; font-size: 13px; display: flex; align-items: center; }
+        .file-item:hover { background-color: #2a2d2e; }
+        .file-item.active { background-color: #37373d; color: #ffffff; }
+        .file-icon { color: #519aba; margin-right: 6px; font-weight: bold; font-family: monospace; font-size: 15px; }
         
-        /* VS Code Theme Syntax Colors */
-        .keyword { color: #c586c0; }     /* return, yield, import, if, else, for, in */
-        .keyword-blue { color: #569cd6; }/* def, class */
-        .function { color: #dcdcaa; }    /* print, len, range, zip */
-        .string { color: #ce9178; }      /* "text" */
-        .number { color: #b5cea8; }      /* 0, 1, 999 */
-        .comment { color: #6a9955; }     /* # comments */
-        .operator { color: #d4d4d4; }    /* =, +, - */
+        .editor-container { flex: 1; display: flex; flex-direction: column; background-color: #1e1e1e; }
+        
+        .tabs { display: flex; background-color: #252526; height: 35px; border-bottom: 1px solid #1e1e1e; }
+        .tab { padding: 0 15px; display: flex; align-items: center; background-color: #1e1e1e; color: #ffffff; border-top: 2px solid #519aba; font-size: 13px; border-right: 1px solid #252526; cursor: default; }
+        
+        .breadcrumbs { padding: 5px 15px; font-size: 12px; color: #858585; background-color: #1e1e1e; display:flex; align-items: center; border-bottom: 1px solid #1e1e1e; box-shadow: 0 1px 2px rgba(0,0,0,0.1);}
+        
+        .code-area { display: flex; flex: 1; overflow: auto; padding-top: 10px; background-color: #1e1e1e; }
+        .line-numbers { padding: 0 15px 50px 15px; text-align: right; color: #858585; font-family: 'Consolas', 'Courier New', monospace; font-size: 14px; line-height: 1.5; user-select: none; border-right: 1px solid #404040; margin:0 }
+        .code-content { padding: 0 15px 50px 15px; margin: 0; color: #d4d4d4; font-family: 'Consolas', 'Courier New', monospace; font-size: 14px; line-height: 1.5; tab-size: 4; white-space: pre; flex: 1; }
+        
+        .status-bar { height: 22px; background-color: #007acc; display: flex; justify-content: space-between; align-items: center; padding: 0 10px; font-size: 12px; color: white; }
+        .status-item { margin-right: 15px; cursor: default; }
+        
+        .keyword { color: #c586c0; }
+        .keyword-blue { color: #569cd6; }
+        .function { color: #dcdcaa; }
+        .string { color: #ce9178; }
     </style>
 </head>
 <body>
+    <div class="top-bar">ADA_EXAM_PREP - Visual Studio Code</div>
+    <div class="main-container">
+        <div class="activity-bar">
+            <!-- Emulate VS Code icons -->
+            <div class="activity-icon active">📄</div>
+            <div class="activity-icon">🔍</div>
+            <div class="activity-icon">⎇</div>
+            <div class="activity-icon">🐞</div>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <span>Explorer</span>
+                <span>...</span>
+            </div>
+            <div class="sidebar-header" style="color:#cccccc; cursor:none;">
+                <span id="folderIcon">▼</span> ADA_EXAM_PREP
+            </div>
+            <div class="sidebar-list" id="fileList"></div>
+        </div>
+        <div class="editor-container">
+            <div class="tabs">
+                <div class="tab">
+                    <span class="file-icon" style="font-size:12px;">Py</span>
+                    <span id="activeTabName">1st.py</span>
+                </div>
+            </div>
+            <div class="breadcrumbs">
+                ADA_EXAM_PREP &gt; <span id="breadcrumbName" style="color:#cccccc; margin-left:5px;">1st.py</span>
+            </div>
+            <div class="code-area">
+                <pre class="line-numbers" id="lineNumbers"></pre>
+                <div class="code-content" id="codeContent"></div>
+            </div>
+        </div>
+    </div>
+    <div class="status-bar">
+        <div>
+            <span class="status-item">main*</span>
+            <span class="status-item">0 ⚠ 0 ✖</span>
+        </div>
+        <div>
+            <span class="status-item">Ln 1, Col 1</span>
+            <span class="status-item">Spaces: 4</span>
+            <span class="status-item">UTF-8</span>
+            <span class="status-item" style="color:#ffffff;">Python</span>
+        </div>
+    </div>
 
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-        <div class="sidebar-header">Explorer</div>
-        <div class="sidebar-header" style="color: #cccccc;">ADA_EXAM_PREP</div>
+    <script>
+        // Data injected from Python
+        const fileData = {"1st.py": {"line_nums": "1\n2\n3\n4", "code_html": "arr = list(<span class=\"function\">map</span>(int, <span class=\"function\">input</span>(<span class=\"string\">\"Enter elements: \"</span>).<span class=\"function\">split</span>()))\nx = int(<span class=\"function\">input</span>(<span class=\"string\">\"Enter element to search: \"</span>))\n<span class=\"function\">print</span>(<span class=\"function\">next</span>((i <span class=\"keyword\">for</span> i, v <span class=\"keyword\">in</span> <span class=\"function\">enumerate</span>(arr) <span class=\"keyword\">if</span> v == x), -1))\n"}, "2nd.py": {"line_nums": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20", "code_html": "<span class=\"keyword-blue\">def</span> binary_search(arr, x):\n    lo = 0\n    hi = <span class=\"function\">len</span>(arr) - 1\n    <span class=\"keyword\">while</span> lo &lt;= hi:\n        mid = (lo + hi) // 2\n        <span class=\"keyword\">if</span> arr[mid] == x:\n            <span class=\"keyword\">return</span> mid\n        el<span class=\"keyword\">if</span> arr[mid] &lt; x:\n            lo = mid + 1\n        <span class=\"keyword\">else</span>:\n            hi = mid - 1\n    <span class=\"keyword\">return</span> -1\narr = list(<span class=\"function\">map</span>(int, <span class=\"function\">input</span>(<span class=\"string\">\"Enter elements: \"</span>).<span class=\"function\">split</span>()))\narr.sort()\nkey = int(<span class=\"function\">input</span>(<span class=\"string\">\"Enter element to search: \"</span>))\nresult = binary_search(arr, key)\n<span class=\"keyword\">if</span> result != -1:\n    <span class=\"function\">print</span>(f<span class=\"string\">\"Element found at index {result}\"</span>)\n<span class=\"keyword\">else</span>:\n    <span class=\"function\">print</span>(<span class=\"string\">\"Element not found\"</span>)"}, "3rd.py": {"line_nums": "1\n2\n3\n4\n5\n6\n7", "code_html": "<span class=\"keyword-blue\">def</span> toh(n, src, dst, aux):\n    <span class=\"keyword\">if</span> n == 0: return\n    toh(n - 1, src, aux, dst)\n    <span class=\"function\">print</span>(f<span class=\"string\">\"Move disk {n} from {src} to {dst}\"</span>)\n    toh(n - 1, aux, dst, src)\ntoh(int(<span class=\"function\">input</span>(<span class=\"string\">\"Enter disks: \"</span>)), <span class=\"string\">'A'</span>, <span class=\"string\">'C'</span>, <span class=\"string\">'B'</span>)\n"}, "4th.py": {"line_nums": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12", "code_html": "<span class=\"keyword-blue\">def</span> selection_sort(arr):\n    n = <span class=\"function\">len</span>(arr)\n    <span class=\"keyword\">for</span> i <span class=\"keyword\">in</span> <span class=\"function\">range</span>(n):\n        min_idx = i\n        <span class=\"keyword\">for</span> j <span class=\"keyword\">in</span> <span class=\"function\">range</span>(i + 1, n):\n            <span class=\"keyword\">if</span> arr[j] &lt; arr[min_idx]:\n                min_idx = j\n        arr[i], arr[min_idx] = arr[min_idx], arr[i]\n    <span class=\"keyword\">return</span> arr\narr = list(<span class=\"function\">map</span>(int, <span class=\"function\">input</span>(<span class=\"string\">\"Enter elements: \"</span>).<span class=\"function\">split</span>()))\n<span class=\"function\">print</span>(<span class=\"string\">\"Sorted:\"</span>, selection_sort(arr))\n"}, "5th.py": {"line_nums": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12", "code_html": "<span class=\"keyword-blue\">def</span> quick_sort(arr):\n   <span class=\"keyword\">if</span> <span class=\"function\">len</span>(arr)&lt;=1:\n      <span class=\"keyword\">return</span> arr\n   <span class=\"keyword\">else</span>:\n      pivot = arr[<span class=\"function\">len</span>(arr)//2]\n      left = [x <span class=\"keyword\">for</span> x <span class=\"keyword\">in</span> arr <span class=\"keyword\">if</span> x&lt;pivot]\n      right = [x <span class=\"keyword\">for</span> x <span class=\"keyword\">in</span> arr <span class=\"keyword\">if</span> x&gt;pivot]\n      <span class=\"keyword\">return</span> quick_sort(left)+[pivot]+quick_sort(right)\nelements = list(<span class=\"function\">map</span>(int,<span class=\"function\">input</span>(<span class=\"string\">\"Enter the elements:\"</span>).<span class=\"function\">split</span>()))\n<span class=\"function\">print</span>(<span class=\"string\">\"Sorted element\"</span>,quick_sort(elements))\n\n"}, "6th.py": {"line_nums": "1\n2\n3\n4\n5\n6\n7\n8", "code_html": "<span class=\"keyword-blue\">def</span> merge_sort(arr):\n    <span class=\"keyword\">if</span> <span class=\"function\">len</span>(arr) &lt; 2: <span class=\"keyword\">return</span> arr\n    l, r = merge_sort(arr[:<span class=\"function\">len</span>(arr)//2]), merge_sort(arr[<span class=\"function\">len</span>(arr)//2:])\n    <span class=\"keyword\">return</span> <span class=\"function\">sorted</span>(l + r)\n\narr = list(<span class=\"function\">map</span>(int, <span class=\"function\">input</span>(<span class=\"string\">\"Enter elements: \"</span>).<span class=\"function\">split</span>()))\n<span class=\"function\">print</span>(<span class=\"string\">\"Sorted:\"</span>, merge_sort(arr))\n"}, "7th.py": {"line_nums": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19", "code_html": "g = [[0,2,0,6],\n     [2,0,3,8],\n     [0,3,0,0],\n     [6,8,0,0]]\n\ns = [1,0,0,0]\n\n<span class=\"keyword\">for</span> _ <span class=\"keyword\">in</span> <span class=\"function\">range</span>(3):\n    m = 999\n    \n    <span class=\"keyword\">for</span> i <span class=\"keyword\">in</span> <span class=\"function\">range</span>(4):\n        <span class=\"keyword\">for</span> j <span class=\"keyword\">in</span> <span class=\"function\">range</span>(4):\n            <span class=\"keyword\">if</span> s[i] and not s[j] and g[i][j] and g[i][j] &lt; m:\n                m = g[i][j]\n                x = i\n                y = j\n\n    <span class=\"function\">print</span>(x, y, m)\n    s[y] = 1"}, "8th.py": {"line_nums": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11", "code_html": "g = [\n    [0,1,999],\n    [999,0,2],\n    [3,999,0]\n    ]\n<span class=\"keyword\">for</span> k <span class=\"keyword\">in</span> <span class=\"function\">range</span>(3):\n    <span class=\"keyword\">for</span> i <span class=\"keyword\">in</span> <span class=\"function\">range</span>(3):\n        <span class=\"keyword\">for</span> j <span class=\"keyword\">in</span> <span class=\"function\">range</span>(3):\n            g[i][j] = <span class=\"function\">min</span>(g[i][j], g[i][k] + g[k][j])\n\n<span class=\"function\">print</span>(g)"}, "9th.py": {"line_nums": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n37\n38\n39", "code_html": "<span class=\"keyword-blue\">class</span> Node:\n    <span class=\"keyword-blue\">def</span> __init__(self, key):\n        self.left = None\n        self.right = None\n        self.val = key\n\n<span class=\"keyword-blue\">def</span> preorder(root):\n    <span class=\"keyword\">if</span> root:\n        <span class=\"function\">print</span>(root.val, end=<span class=\"string\">\" \"</span>)\n        preorder(root.left)\n        preorder(root.right)\n\n<span class=\"keyword-blue\">def</span> inorder(root):\n    <span class=\"keyword\">if</span> root:\n        inorder(root.left)\n        <span class=\"function\">print</span>(root.val, end=<span class=\"string\">\" \"</span>)\n        inorder(root.right)\n\n<span class=\"keyword-blue\">def</span> postorder(root):\n    <span class=\"keyword\">if</span> root:\n        postorder(root.left)\n        postorder(root.right)\n        <span class=\"function\">print</span>(root.val, end=<span class=\"string\">\" \"</span>)\n\n<span class=\"keyword\">if</span> __name__ == <span class=\"string\">\"__main__\"</span>:\n    root = Node(1)\n    root.left = Node(2)\n    root.right = Node(3)\n    root.left.left = Node(4)\n    root.left.right = Node(5)\n\n    <span class=\"function\">print</span>(<span class=\"string\">\"Inorder traversal: \"</span>)\n    inorder(root)\n    <span class=\"function\">print</span>(<span class=\"string\">\"\\nPreorder traversal: \"</span>)\n    preorder(root)\n    <span class=\"function\">print</span>(<span class=\"string\">\"\\nPostorder traversal: \"</span>)\n    postorder(root)\n\n"}, "10th.py": {"line_nums": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17", "code_html": "g = [[0,1,1,1],\n     [1,0,1,0],\n     [1,1,0,1],\n     [1,0,1,0]]\nc = [0,0,0,0]\n<span class=\"keyword\">for</span> v <span class=\"keyword\">in</span> <span class=\"function\">range</span>(4):\n    <span class=\"keyword\">for</span> col <span class=\"keyword\">in</span> [1,2,3]:\n        ok = 1\n        <span class=\"keyword\">for</span> i <span class=\"keyword\">in</span> <span class=\"function\">range</span>(4):\n            <span class=\"keyword\">if</span> g[v][i] == 1 and c[i] == col:\n                ok = 0\n        <span class=\"keyword\">if</span> ok:\n            c[v] = col\n            <span class=\"keyword\">break</span>\n\n<span class=\"function\">print</span>(c)\n"}, "11th.py": {"line_nums": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13", "code_html": "jobs = [(<span class=\"string\">'A'</span>,2,100), (<span class=\"string\">'B'</span>,1,50), (<span class=\"string\">'C'</span>,2,10)]\njobs.sort(key=lambda x: x[2], reverse=True)\nslot = [0,0]\ntotal_profit = 0\n<span class=\"keyword\">for</span> j <span class=\"keyword\">in</span> jobs:\n    <span class=\"keyword\">for</span> i <span class=\"keyword\">in</span> <span class=\"function\">range</span>(j[1]-1, -1, -1):\n        <span class=\"keyword\">if</span> slot[i] == 0:\n            slot[i] = j[0]\n            total_profit += j[2]\n            <span class=\"keyword\">break</span>\n\n<span class=\"function\">print</span>(<span class=\"string\">\"Sequence:\"</span>, slot)\n<span class=\"function\">print</span>(<span class=\"string\">\"Total Profit:\"</span>, total_profit)"}, "12th.py": {"line_nums": "1\n2\n3\n4\n5\n6\n7\n8", "code_html": "<span class=\"keyword-blue\">def</span> knapsack(capacity, weights, values):\n    dp = [0] * (capacity + 1)\n    <span class=\"keyword\">for</span> weight, value <span class=\"keyword\">in</span> <span class=\"function\">zip</span>(weights, values):\n        <span class=\"keyword\">for</span> curr_cap <span class=\"keyword\">in</span> <span class=\"function\">range</span>(capacity, weight - 1, -1):\n            dp[curr_cap] = <span class=\"function\">max</span>(dp[curr_cap], dp[curr_cap - weight] + value)\n    <span class=\"keyword\">return</span> dp[capacity]\n\n<span class=\"function\">print</span>(<span class=\"string\">\"Max value:\"</span>, knapsack(50, [10, 20, 30], [60, 100, 120]))"}};
+        const fileNames = Object.keys(fileData);
+        let activeFile = fileNames[0];
+
+        function renderSidebar() {
+            const list = document.getElementById('fileList');
+            list.innerHTML = '';
+            fileNames.forEach(f => {
+                const div = document.createElement('div');
+                div.className = 'file-item' + (f === activeFile ? ' active' : '');
+                div.innerHTML = `<span class="file-icon">Py</span> ${f}`;
+                div.onclick = () => selectFile(f);
+                list.appendChild(div);
+            });
+        }
+
+        function selectFile(fileName) {
+            activeFile = fileName;
+            document.getElementById('activeTabName').innerText = fileName;
+            document.getElementById('breadcrumbName').innerText = fileName;
+            
+            let htmlData = fileData[fileName].code_html;
+            if(htmlData === "File not found.") {
+                document.getElementById('lineNumbers').innerText = "1";
+            } else {
+                document.getElementById('lineNumbers').innerText = fileData[fileName].line_nums;
+            }
+            
+            document.getElementById('codeContent').innerHTML = htmlData;
+            renderSidebar();
+        }
         
-        <div class="explorer-item">
-            <b><small>Py</small></b> 1st.py <span>- Linear</span>
-        </div>
-    
-        <div class="explorer-item">
-            <b><small>Py</small></b> 2nd.py <span>- Binary</span>
-        </div>
-    
-        <div class="explorer-item">
-            <b><small>Py</small></b> 3rd.py <span>- Tower</span>
-        </div>
-    
-        <div class="explorer-item">
-            <b><small>Py</small></b> 4th.py <span>- Selection</span>
-        </div>
-    
-        <div class="explorer-item">
-            <b><small>Py</small></b> 5th.py <span>- Quick</span>
-        </div>
-    
-        <div class="explorer-item">
-            <b><small>Py</small></b> 6th.py <span>- Merge</span>
-        </div>
-    
-        <div class="explorer-item">
-            <b><small>Py</small></b> 7th.py <span>- Prim's</span>
-        </div>
-    
-        <div class="explorer-item">
-            <b><small>Py</small></b> 8th.py <span>- Floyd-Warshall</span>
-        </div>
-    
-        <div class="explorer-item">
-            <b><small>Py</small></b> 9th.py <span>- Tree</span>
-        </div>
-    
-        <div class="explorer-item">
-            <b><small>Py</small></b> 10th.py <span>- Graph</span>
-        </div>
-    
-        <div class="explorer-item">
-            <b><small>Py</small></b> 11th.py <span>- Job</span>
-        </div>
-    
-        <div class="explorer-item">
-            <b><small>Py</small></b> 12th.py <span>- 0/1</span>
-        </div>
-    
-    </div>
-
-    <!-- MAIN EDITOR CONTENT -->
-    <div class="main-content">
-        
-    <div class="editor-container">
-        <div class="tabs">
-            <div class="tab-active"><b><small style="color:#519aba;margin-right:6px">Py</small></b> 1st.py</div>
-        </div>
-        <div class="breadcrumbs">
-            ADA_EXAM_PREP > <span>1st.py</span> > Linear Search
-        </div>
-        <pre><code>arr = list(<span class="function">map</span>(int, <span class="function">input</span>("Enter elements: ").<span class="function">split</span>()))
-x = int(<span class="function">input</span>("Enter element to search: "))
-<span class="function">print</span>(next((i <span class="keyword">for</span> i, v <span class="keyword">in</span> enumerate(arr) <span class="keyword">if</span> v == x), -1))
-</code></pre>
-    </div>
-    
-    <div class="editor-container">
-        <div class="tabs">
-            <div class="tab-active"><b><small style="color:#519aba;margin-right:6px">Py</small></b> 2nd.py</div>
-        </div>
-        <div class="breadcrumbs">
-            ADA_EXAM_PREP > <span>2nd.py</span> > Binary Search
-        </div>
-        <pre><code><span class="keyword-blue">def</span> binary_search(arr, x):
-    lo = 0
-    hi = <span class="function">len</span>(arr) - 1
-    <span class="keyword">while</span> lo &lt;= hi:
-        mid = (lo + hi) // 2
-        <span class="keyword">if</span> arr[mid] == x:
-            <span class="keyword">return</span> mid
-        el<span class="keyword">if</span> arr[mid] &lt; x:
-            lo = mid + 1
-        <span class="keyword">else</span>:
-            hi = mid - 1
-    <span class="keyword">return</span> -1
-arr = list(<span class="function">map</span>(int, <span class="function">input</span>("Enter elements: ").<span class="function">split</span>()))
-arr.sort()
-key = int(<span class="function">input</span>("Enter element to search: "))
-result = binary_search(arr, key)
-<span class="keyword">if</span> result != -1:
-    <span class="function">print</span>(f"Element found at index {result}")
-<span class="keyword">else</span>:
-    <span class="function">print</span>("Element not found")</code></pre>
-    </div>
-    
-    <div class="editor-container">
-        <div class="tabs">
-            <div class="tab-active"><b><small style="color:#519aba;margin-right:6px">Py</small></b> 3rd.py</div>
-        </div>
-        <div class="breadcrumbs">
-            ADA_EXAM_PREP > <span>3rd.py</span> > Tower of Hanoi
-        </div>
-        <pre><code><span class="keyword-blue">def</span> toh(n, src, dst, aux):
-    <span class="keyword">if</span> n == 0: return
-    toh(n - 1, src, aux, dst)
-    <span class="function">print</span>(f"Move disk {n} from {src} to {dst}")
-    toh(n - 1, aux, dst, src)
-toh(int(<span class="function">input</span>("Enter disks: ")), 'A', 'C', 'B')
-</code></pre>
-    </div>
-    
-    <div class="editor-container">
-        <div class="tabs">
-            <div class="tab-active"><b><small style="color:#519aba;margin-right:6px">Py</small></b> 4th.py</div>
-        </div>
-        <div class="breadcrumbs">
-            ADA_EXAM_PREP > <span>4th.py</span> > Selection Sort
-        </div>
-        <pre><code><span class="keyword-blue">def</span> selection_sort(arr):
-    n = <span class="function">len</span>(arr)
-    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="function">range</span>(n):
-        min_idx = i
-        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="function">range</span>(i + 1, n):
-            <span class="keyword">if</span> arr[j] &lt; arr[min_idx]:
-                min_idx = j
-        arr[i], arr[min_idx] = arr[min_idx], arr[i]
-    <span class="keyword">return</span> arr
-arr = list(<span class="function">map</span>(int, <span class="function">input</span>("Enter elements: ").<span class="function">split</span>()))
-<span class="function">print</span>(<span class="string">"Sorted:"</span>, selection_sort(arr))
-</code></pre>
-    </div>
-    
-    <div class="editor-container">
-        <div class="tabs">
-            <div class="tab-active"><b><small style="color:#519aba;margin-right:6px">Py</small></b> 5th.py</div>
-        </div>
-        <div class="breadcrumbs">
-            ADA_EXAM_PREP > <span>5th.py</span> > Quick Sort
-        </div>
-        <pre><code><span class="keyword-blue">def</span> quick_sort(arr):
-   <span class="keyword">if</span> <span class="function">len</span>(arr)&lt;=1:
-      <span class="keyword">return</span> arr
-   <span class="keyword">else</span>:
-      pivot = arr[<span class="function">len</span>(arr)//2]
-      left = [x <span class="keyword">for</span> x <span class="keyword">in</span> arr <span class="keyword">if</span> x&lt;pivot]
-      right = [x <span class="keyword">for</span> x <span class="keyword">in</span> arr <span class="keyword">if</span> x&gt;pivot]
-      <span class="keyword">return</span> quick_sort(left)+[pivot]+quick_sort(right)
-elements = list(<span class="function">map</span>(int,<span class="function">input</span>(<span class="string">"Enter the elements:"</span>).<span class="function">split</span>()))
-<span class="function">print</span>("Sorted element",quick_sort(elements))
-
-</code></pre>
-    </div>
-    
-    <div class="editor-container">
-        <div class="tabs">
-            <div class="tab-active"><b><small style="color:#519aba;margin-right:6px">Py</small></b> 6th.py</div>
-        </div>
-        <div class="breadcrumbs">
-            ADA_EXAM_PREP > <span>6th.py</span> > Merge Sort
-        </div>
-        <pre><code><span class="keyword-blue">def</span> merge_sort(arr):
-    <span class="keyword">if</span> <span class="function">len</span>(arr) &lt; 2: <span class="keyword">return</span> arr
-    l, r = merge_sort(arr[:<span class="function">len</span>(arr)//2]), merge_sort(arr[<span class="function">len</span>(arr)//2:])
-    <span class="keyword">return</span> sorted(l + r)
-
-arr = list(<span class="function">map</span>(int, <span class="function">input</span>("Enter elements: ").<span class="function">split</span>()))
-<span class="function">print</span>(<span class="string">"Sorted:"</span>, merge_sort(arr))
-</code></pre>
-    </div>
-    
-    <div class="editor-container">
-        <div class="tabs">
-            <div class="tab-active"><b><small style="color:#519aba;margin-right:6px">Py</small></b> 7th.py</div>
-        </div>
-        <div class="breadcrumbs">
-            ADA_EXAM_PREP > <span>7th.py</span> > Prim's Algorithm
-        </div>
-        <pre><code>g = [[0,2,0,6],
-     [2,0,3,8],
-     [0,3,0,0],
-     [6,8,0,0]]
-
-s = [1,0,0,0]
-
-<span class="keyword">for</span> _ <span class="keyword">in</span> <span class="function">range</span>(3):
-    m = 999
-    
-    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="function">range</span>(4):
-        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="function">range</span>(4):
-            <span class="keyword">if</span> s[i] and not s[j] and g[i][j] and g[i][j] &lt; m:
-                m = g[i][j]
-                x = i
-                y = j
-
-    <span class="function">print</span>(x, y, m)
-    s[y] = 1</code></pre>
-    </div>
-    
-    <div class="editor-container">
-        <div class="tabs">
-            <div class="tab-active"><b><small style="color:#519aba;margin-right:6px">Py</small></b> 8th.py</div>
-        </div>
-        <div class="breadcrumbs">
-            ADA_EXAM_PREP > <span>8th.py</span> > Floyd-Warshall Algorithm
-        </div>
-        <pre><code>g = [
-    [0,1,999],
-    [999,0,2],
-    [3,999,0]
-    ]
-<span class="keyword">for</span> k <span class="keyword">in</span> <span class="function">range</span>(3):
-    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="function">range</span>(3):
-        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="function">range</span>(3):
-            g[i][j] = <span class="function">min</span>(g[i][j], g[i][k] + g[k][j])
-
-<span class="function">print</span>(g)</code></pre>
-    </div>
-    
-    <div class="editor-container">
-        <div class="tabs">
-            <div class="tab-active"><b><small style="color:#519aba;margin-right:6px">Py</small></b> 9th.py</div>
-        </div>
-        <div class="breadcrumbs">
-            ADA_EXAM_PREP > <span>9th.py</span> > Tree Traversals
-        </div>
-        <pre><code><span class="keyword-blue">class</span> Node:
-    <span class="keyword-blue">def</span> __init__(self, key):
-        self.left = None
-        self.right = None
-        self.val = key
-
-<span class="keyword-blue">def</span> preorder(root):
-    <span class="keyword">if</span> root:
-        <span class="function">print</span>(root.val, end=" ")
-        preorder(root.left)
-        preorder(root.right)
-
-<span class="keyword-blue">def</span> inorder(root):
-    <span class="keyword">if</span> root:
-        inorder(root.left)
-        <span class="function">print</span>(root.val, end=" ")
-        inorder(root.right)
-
-<span class="keyword-blue">def</span> postorder(root):
-    <span class="keyword">if</span> root:
-        postorder(root.left)
-        postorder(root.right)
-        <span class="function">print</span>(root.val, end=" ")
-
-<span class="keyword">if</span> __name__ == "__main__":
-    root = Node(1)
-    root.left = Node(2)
-    root.right = Node(3)
-    root.left.left = Node(4)
-    root.left.right = Node(5)
-
-    <span class="function">print</span>("Inorder traversal: ")
-    inorder(root)
-    <span class="function">print</span>("\nPreorder traversal: ")
-    preorder(root)
-    <span class="function">print</span>("\nPostorder traversal: ")
-    postorder(root)
-
-</code></pre>
-    </div>
-    
-    <div class="editor-container">
-        <div class="tabs">
-            <div class="tab-active"><b><small style="color:#519aba;margin-right:6px">Py</small></b> 10th.py</div>
-        </div>
-        <div class="breadcrumbs">
-            ADA_EXAM_PREP > <span>10th.py</span> > Graph Coloring using Backtracking
-        </div>
-        <pre><code>g = [[0,1,1,1],
-     [1,0,1,0],
-     [1,1,0,1],
-     [1,0,1,0]]
-c = [0,0,0,0]
-<span class="keyword">for</span> v <span class="keyword">in</span> <span class="function">range</span>(4):
-    <span class="keyword">for</span> col <span class="keyword">in</span> [1,2,3]:
-        ok = 1
-        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="function">range</span>(4):
-            <span class="keyword">if</span> g[v][i] == 1 and c[i] == col:
-                ok = 0
-        <span class="keyword">if</span> ok:
-            c[v] = col
-            <span class="keyword">break</span>
-<span class="function">print</span>(c)
-</code></pre>
-    </div>
-    
-    <div class="editor-container">
-        <div class="tabs">
-            <div class="tab-active"><b><small style="color:#519aba;margin-right:6px">Py</small></b> 11th.py</div>
-        </div>
-        <div class="breadcrumbs">
-            ADA_EXAM_PREP > <span>11th.py</span> > Job Sequencing with Deadlines
-        </div>
-        <pre><code>jobs = [('A',2,100), ('B',1,50), ('C',2,10)]
-jobs.sort(key=lambda x: x[2], reverse=True)
-slot = [0,0]
-total_profit = 0
-<span class="keyword">for</span> j <span class="keyword">in</span> jobs:
-    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="function">range</span>(j[1]-1, -1, -1):
-        <span class="keyword">if</span> slot[i] == 0:
-            slot[i] = j[0]
-            total_profit += j[2]
-            <span class="keyword">break</span>
-<span class="function">print</span>("Sequence:", slot)
-<span class="function">print</span>("Total Profit:", total_profit)</code></pre>
-    </div>
-    
-    <div class="editor-container">
-        <div class="tabs">
-            <div class="tab-active"><b><small style="color:#519aba;margin-right:6px">Py</small></b> 12th.py</div>
-        </div>
-        <div class="breadcrumbs">
-            ADA_EXAM_PREP > <span>12th.py</span> > 0/1 Knapsack Problem
-        </div>
-        <pre><code><span class="keyword-blue">def</span> knapsack(capacity, weights, values):
-    dp = [0] * (capacity + 1)
-    <span class="keyword">for</span> weight, value <span class="keyword">in</span> zip(weights, values):
-        <span class="keyword">for</span> curr_cap <span class="keyword">in</span> <span class="function">range</span>(capacity, weight - 1, -1):
-            dp[curr_cap] = <span class="function">max</span>(dp[curr_cap], dp[curr_cap - weight] + value)
-    <span class="keyword">return</span> dp[capacity]
-
-<span class="function">print</span>("Max value:", knapsack(50, [10, 20, 30], [60, 100, 120]))</code></pre>
-    </div>
-    
-    </div>
-
+        // Init
+        if (fileNames.length > 0) {
+            selectFile(activeFile);
+        }
+    </script>
 </body>
 </html>
