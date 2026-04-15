@@ -29,10 +29,10 @@ if __name__ == "__main__":
     root.left.left = Node(4)
     root.left.right = Node(5)
 
-    print("Inorder traversal: ", end="")
+    print("Inorder traversal: ")
     inorder(root)
-    print("\nPreorder traversal: ", end="")
+    print("\nPreorder traversal: ")
     preorder(root)
-    print("\nPostorder traversal: ", end="")
+    print("\nPostorder traversal: ")
     postorder(root)
-    print()
+
