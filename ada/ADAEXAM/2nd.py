@@ -1,10 +1,20 @@
 def binary_search(arr, x):
-    lo, hi = 0, len(arr) - 1
+    lo = 0
+    hi = len(arr) - 1
     while lo <= hi:
         mid = (lo + hi) // 2
-        if arr[mid] == x: return mid
-        lo, hi = (mid + 1, hi) if arr[mid] < x else (lo, mid - 1)
+        if arr[mid] == x:
+            return mid
+        elif arr[mid] < x:
+            lo = mid + 1
+        else:
+            hi = mid - 1
     return -1
-arr = sorted(map(int, input("Enter elements: ").split()))
+arr = list(map(int, input("Enter elements: ").split()))
+arr.sort()
 key = int(input("Enter element to search: "))
-print(binary_search(arr, key))
+result = binary_search(arr, key)
+if result != -1:
+    print(f"Element found at index {result}")
+else:
+    print("Element not found")
