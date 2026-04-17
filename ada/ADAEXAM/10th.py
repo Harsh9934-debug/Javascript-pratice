@@ -13,3 +13,8 @@ for v in range(4):
             c[v] = col
             break
 print(c)
+
+
+
+
+
