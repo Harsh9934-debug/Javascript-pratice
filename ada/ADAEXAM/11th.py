@@ -10,3 +10,12 @@ for j in jobs:
             break
 print("Sequence:", slot)
 print("Total Profit:", total_profit)
+
+
+
+
+
+
+
+
+
