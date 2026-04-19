@@ -1,11 +1,17 @@
 <?php
-setcookie("time", date('d-m-y h:i:s'));
-$msg = $_COOKIE["time"] ?? "You are visiting for the first time";
+    setcookie("time", date('d-m-Y h:i:s'));
 ?>
 <html>
 <body>
-<center><h2>last visited the person is</h2></center>
-<br>
-<?= $msg == "You are visiting for the first time" ? $msg : "Last time login is $msg"; ?>
+    <center><h2>Last Visit Details</h2></center>
+    <center>
+    <?php
+        if (isset($_COOKIE["time"])) {
+            echo "Your last visit was on: " . $_COOKIE["time"];
+        } else {
+            echo "You are visiting for the first time!";
+        }
+    ?>
+    </center>
 </body>
 </html>
