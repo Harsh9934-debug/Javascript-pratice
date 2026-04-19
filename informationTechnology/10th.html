@@ -4,9 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Temperature Converter</title>
 </head>
 <body>
-    
+    <center><h1>Temperature Converter</h1></center>
+
+    <h3>Celsius to Fahrenheit</h3>
+    Enter Celsius: <input type="number" id="celsius">
+    <button onclick="convertToF()">Convert</button>
+    <p id="resultF"></p>
+
+    <br>
+
+    <h3>Fahrenheit to Celsius</h3>
+    Enter Fahrenheit: <input type="number" id="fahrenheit">
+    <button onclick="convertToC()">Convert</button>
+    <p id="resultC"></p>
+
+    <script>
+        function convertToF() {
+            let c = document.getElementById("celsius").value;
+            // Formula: (C * 9/5) + 32 = F
+            let f = (c * 9/5) + 32;
+            document.getElementById("resultF").innerHTML = f + " °F";
+        }
+
+        function convertToC() {
+            let f = document.getElementById("fahrenheit").value;
+            // Formula: (F - 32) * 5/9 = C
+            let c = (f - 32) * 5/9;
+            document.getElementById("resultC").innerHTML = c + " °C";
+        }
+    </script>
 </body>
 </html>
