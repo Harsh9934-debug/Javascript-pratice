@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <h1>Check for the radius of the circle</h1>
+    </center>
+    Enter the radius of the circle
+    <input type="number" name="radius" id="radius">
+    <button onclick="checkradius()">check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkradius() {
+            let radiusofcircle = document.getElementById("radius").value;
+            let area = 3.14 * radiusofcircle * radiusofcircle;
+            document.getElementById("result").innerHTML="The area of the circle is" + area;
+        }
+    </script>
+</body>
+
+</html>
