@@ -30,3 +30,18 @@ if($_POST){
 }
 ?>
 </body>
+
+// Database connection details
+// Host: localhost
+// Username: root
+// Database: studentdb
+/*
+CREATE TABLE registration(
+id INT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(50),
+email VARCHAR(50),
+password VARCHAR(50),
+gender VARCHAR(10),
+course VARCHAR(50)
+);
+*/
